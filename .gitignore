@@ -5,6 +5,6 @@ node_modules/
 !.vscode/extensions.json
 Icon?
 ![iI]con[_a-zA-Z0-9-]
-shared
+public
 docs/md/images
 Notes/

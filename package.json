@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "pandoc": "pandoc -o docs/index.html --template=shared/template.html docs/md/*.md",
-    "watch": "node shared/watch.js Writing-Your-Own-Tutorials"
+    "pandoc": "pandoc -o docs/index.html --template=public/template.html docs/md/*.md",
+    "watch": "node public/watch.js 02-Writing-Your-Own-Tutorials"
   }
 }
