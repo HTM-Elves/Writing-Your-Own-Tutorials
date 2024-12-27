@@ -1,6 +1,11 @@
 {
   "scripts": {
     "pandoc": "pandoc -o docs/index.html --template=public/template.html docs/md/*.md",
-    "watch": "node public/watch.js 02-Writing-Your-Own-Tutorials"
+    "filter": "pandoc -o docs/index.html --filter public/filter.js --template=public/template.html docs/md/*.md",
+    "watch": "node public/watch.js Filter",
+    "publish": "node publish.js"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7"
   }
 }
