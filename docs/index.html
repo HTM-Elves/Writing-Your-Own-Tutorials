@@ -307,9 +307,446 @@ each Markdown file.</p>
 </details>
 </section>
 <!-- Section Snippets -->
-<section id="section-snippets" aria-labelledby="section-snippets" data-item="5. Snippets and Sections">
+<section id="section-snippets" aria-labelledby="section-snippets" data-item="5. Sections and Snippets">
 <h2>
-<a href="#section-snippets">Snippets and Sections</a>
+<a href="#section-snippets">Sections and Snippets</a>
+</h2>
+<p>If you look at
+<code>MyTutorials/The-Basics/docs/md/99-Intro.md</code>, you’ll see the
+following lines just after the YAML block:</p>
+<pre class="language-md line-numbers" data-start="8"><code class="language-md line-numbers">&lt;section
+  id="intro"
+  aria-labelledby="intro"
+  data-item="Introduction"
+&gt;
+  &lt;h2&gt;&lt;a href="#intro"&gt;Introduction&lt;/a&gt;&lt;/h2&gt;
+</code></pre>
+<pre class="skip"><code class="skip">&lt;!-- Some lines skipped --&gt;</code></pre>
+<pre class="language-md line-numbers" data-start="19"><code class="language-md line-numbers">&lt;/section&gt;</code></pre>
+<p><strong><em>“Wait a minute!”</em></strong> I hear you say.
+<strong><em>“This looks like HTML, but I thought that the whole point of
+this HTM-Elves workflow was to avoid writing any
+HTML!”</em></strong></p>
+<p>You are right. You won’t be <em>writing</em> any HTML, but you will
+be <em>using</em> HTML, when standard Markdown needs a little help. And
+Markdown needs help in creating container elements, sections.</p>
+<h2 id="a-section-for-each-file">A section for each file</h2>
+<p>I have three opinions about writing tutorials:</p>
+<ol type="1">
+<li>I like to create a separate Markdown file for each section.</li>
+<li>I like my tutorial web pages to be divided into separate “pages”,
+one for each section, following my file structure.</li>
+</ol>
+<p>However, standard Markdown does not provide a convention for creating
+container blocks like <code>&lt;div&gt;</code> or
+<code>&lt;section&gt;</code>. (Pandoc <em>does</em> recognize an
+extended set of Markdown rules which cover this, but Pandoc has quite a
+steep learning curve.)</p>
+<p>Fortunately, Markdown, by design, understands all HTML tags.
+Unfortunately, Standard Markdown considers that anything inside an HTML
+tag should be formatted as HTML, so it treats Markdown inside an HTML
+tag as plain text. Pandoc to the rescue! Pandoc treats any standard
+Markdown <em>inside</em> an HTML tag as Markdown that it can convert to
+HTML.</p>
+<p>I can therefore start each page with an HTML block like the one you
+see above, and use CSS rules to show only one
+<code>&lt;section&gt;</code> at a time, to impose my second opinion.</p>
+<details class="note" open>
+<summary>
+Fragments and targets
+</summary>
+<p>When you click on an item in the menu, or on one of the buttons in
+the footer, the link you activated sets the <em>fragment</em> in the URL
+address bar. For example, for this page the URL is in the address bar
+has the fragment <code>#section-snippets</code>:</p>
+<pre class="language-html wrap"><code class="language-html wrap"><i>https://htm-elves.github.io/Writing-Your-Own-Tutorials/</i><b>#section-snippets</b></code></pre>
+<p>The CSS pseudo-class <code>:target</code> matches any element whose
+<code>id</code> is the same as the <code>fragment</code>. My CSS hides
+all <code>&lt;section&gt;</code> elements which do not have the same
+<code>id</code> as the <code>fragment</code>, and shows only the one
+that does.</p>
+<p>Actually, it’s slightly more complicated than that (which is why the
+first Markdown file has the number <code>99</code>) but I’ll explain in
+section <a href="#target-or-last-child">13. Target or Last
+Child</a>.</p>
+</details>
+<h2 id="using-vs-code-snippets">Using VS Code snippets</h2>
+<p>I said that I have three opinions about writing tutorials. Here’s the
+third:</p>
+<ol start="3" type="1">
+<li>I like to type as little as possible.</li>
+</ol>
+<p>Instead of typing out a chunk of HTML code each time I create a new
+Markdown file, I use a <a
+href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VS
+Code Snippet</a>. Snippets are templates that allow you to insert
+predictable chunks of text, and customize them quickly depending on the
+context.</p>
+<p>When I create a new file, I give the file a name like
+<code>22.5-Ducks_on_the_water.md</code>, and then I type
+<code>sss</code> into the new empty file. This triggers a Markdown
+snippet that I have created, which generates an HTML block for me, as
+shown in the code listing below:</p>
+<pre class="language-html"><code class="language-html">&lt;!-- 22. Ducks On The Water --&gt;
+&lt;section
+    id="22. Ducks On The Water"
+    aria-labelledby="22. Ducks On The Water"
+    data-item="22. Ducks On The Water"
+&gt;
+    &lt;h2&gt;&lt;a href="#22. Ducks On The Water"&gt;22. Ducks On The Water&lt;/a&gt;&lt;/h2&gt;
+    
+
+&lt;/section&gt;</code></pre>
+<p>This is not exactly what I want. However, the snippet contains a
+number of <em>tabstops</em>. Each time I press the Tab key, the snippet
+engine selects a different chunk of the snippet text, and allows me to
+edit it. Even better, the snippet is designed to <em>transform</em> the
+text at each tabstop, in different ways.</p>
+<p>Without editing the inserted snippet at all, I can simply press the
+Tab key 5 times, and it changes the text at each tabstop for me, and
+then places the cursor in where you see the <code>|</code> character,
+ready for me to add content to the page.</p>
+<pre class="language-html"><code class="language-html">&lt;!-- 22. Ducks On The Water --&gt;
+&lt;section
+  id="ducks-on-the-water"
+  aria-labelledby="ducks-on-the-water"
+  data-item="22. Ducks On The Water"
+&gt;
+  &lt;h2&gt;&lt;a href="#ducks-on-the-water"&gt;Ducks On The Water&lt;/a&gt;&lt;/h2&gt;
+  |
+
+&lt;/section&gt;</code></pre>
+<p>The numbered <code>data-item</code> is used in the menu. The
+<code>id</code> ensures that this section is displayed when the fragment
+in the address bar matches it. Wrapping the header text in a link means
+that it is easy for you to copy the link to the current page, if you
+want to share it with someone.</p>
+<details class="pivot" open>
+<summary>
+Time-saving with snippets
+</summary>
+<p>By default, VS Code does not provide any Markdown snippets, and it
+has disactivated the use of snippets in Markdown files.</p>
+<p>In the next section, you’ll see how to activate snippets, and I’ll
+give you a collection to get started with.</p>
+</details>
+</section>
+<!-- 6. Activating Markdown Snippets -->
+<section id="activating-markdown-snippets" aria-labelledby="activating-markdown-snippets" data-item="6. Activating Snippets">
+<h2>
+<a href="#activating-markdown-snippets">Activating Markdown Snippets</a>
+</h2>
+<p>If you create a new file in VS Code, save it with the Markdown
+extension <code>.md</code>, and then type <code>sss</code> into it,
+nothing special will happen.</p>
+<p>First you need two things:</p>
+<ol type="1">
+<li>To activate <code>quicksuggestions</code> for Markdown files</li>
+<li>A file named <code>markdown.json</code> with some useful
+snippets.</li>
+</ol>
+<h2 id="activate-quicksuggestions-for-markdown-files">Activate
+<code>quicksuggestions</code> for Markdown files</h2>
+<p>To activate <code>quicksuggestions</code> for Markdown files, you
+need to:</p>
+<ol type="1">
+<li>Open the VS Code’s Command Palette. The lazy way is to use the menu
+item <code>View &gt; Command Palette</code>, but that means that you
+have to move your hands away from your keyboard, which wastes time.
+Instead, use the keyboard shortcut <code>Ctrl-Shift-P</code>, or simply
+<code>F1</code>.</li>
+<li>Start typing some part of “Preferences: Configure Language Specific
+Settings”. (I find that “Lang Set” is enough to bring the appropriate
+command to the top of the list.)</li>
+</ol>
+<figure>
+<img src="images/LanguageSettings.webp"
+alt="Configure Language Specific Settings" />
+<figcaption aria-hidden="true">Configure Language Specific
+Settings</figcaption>
+</figure>
+<ol start="3" type="1">
+<li>Press Enter. You will see a list of all the languages that VS Code
+can handle. Start typing “Markdown”, then press Enter when Markdown
+appears at the top of the list.</li>
+</ol>
+<figure>
+<img src="images/MarkdownSettings.webp" alt="Markdown Settings" />
+<figcaption aria-hidden="true">Markdown Settings</figcaption>
+</figure>
+<ol start="4" type="1">
+<li>In the Search bar, <code>@lang:markdown</code> will already appear.
+Start adding the word <code>quicksuggestions</code>, until the entry
+“Editor: <strong>Quick Suggestions</strong>” appears.</li>
+</ol>
+<figure>
+<img src="images/quickSuggestions.webp"
+alt="Editor: Quick Suggestions" />
+<figcaption aria-hidden="true">Editor: Quick Suggestions</figcaption>
+</figure>
+<ol start="5" type="1">
+<li>For the item “other” click on the Pencil icon, which appears when
+you hover your mouse in the right place, then use the contextual menu to
+select <code>on</code>.</li>
+<li>Click OK.</li>
+</ol>
+<figure>
+<img src="images/ActivateQuickSuggestions.webp" alt="Caption" />
+<figcaption aria-hidden="true">Caption</figcaption>
+</figure>
+<h2 id="install-some-useful-snippets">Install some useful snippets</h2>
+<p>Now you can install some useful snippets in a special file called
+<code>markdown.json</code>. To open this file:</p>
+<ol type="1">
+<li><ol type="1">
+<li>Open the VS Code’s Command Palette (<code>Ctrl-Shift-P</code>, or
+simply <code>F1</code>).</li>
+</ol></li>
+<li>Start typing “snippets”, until the command “Snippets: Configure
+Snippets” is at the top of the list.</li>
+</ol>
+<figure>
+<img src="images/ConfigureSnippets.webp" alt="Caption" />
+<figcaption aria-hidden="true">Caption</figcaption>
+</figure>
+<ol start="3" type="1">
+<li>Press Enter.</li>
+<li>You’ll see a list of all the languages that VS Code can provide
+snippets for. Start typing “Markdown” until <code>markdown.json</code>
+is at the top of the list.</li>
+</ol>
+<figure>
+<img src="images/MarkdownSnippets.webp" alt="Caption" />
+<figcaption aria-hidden="true">Caption</figcaption>
+</figure>
+<ol start="5" type="1">
+<li>Press Enter.</li>
+<li>A file named <code>markdown.json</code> will open. It’s not exactly
+a JSON file, because it supports JavaScript-like comments. It’s probably
+just got comments in it and no snippets.</li>
+<li>Copy the JSON from the code listing below and use this to replace
+the current contents of the file.</li>
+</ol>
+<details class="warn" open>
+<summary>
+Summary
+</summary>
+<p>If there are already some Markdown snippets in the file, simply add
+the snippets from the code listing below, rather than replacing
+everything.</p>
+</details>
+<p>Here are the Markdown snippets that I use regularly in connection
+with HTM-Elves:</p>
+<pre class="language-json wrap"><code class="language-json wrap">{
+    // Place your snippets for markdown here. Each snippet is
+    // defined under a snippet name and has a prefix, body and
+    // description. The prefix is what is used to trigger the 
+    // snippet and the body will be expanded and inserted. Possible
+    // variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and
+    // ${1:label}, ${2:another} for placeholders. Placeholders with
+    // the same ids are connected.
+
+    // For more details, see
+    // https://code.visualstudio.com/docs/editor/userdefinedsnippets
+
+    "numbered section":{
+        "body": [
+            "&lt;!-- ${1:${TM_FILENAME/(^(0*)([0-9]+)([0-9 _.-]*))|(\\..{1,4}$)|('(?:[a-z]|re|ve)(?=(?:[\\s_.-]|$)))|([a-z0-9]+)|([\\s-_.-]+)|(.)/$3${3:+. }$6${7:/capitalize}${8:+ }$9/gi}} --&gt;\n&lt;section\n  id=\"${2:${1/(^[0-9. ]+)|([a-z0-9]+)|([\\s_.-]+)|(.)/${2:/downcase}${3:+-}/gi}}\"\n  aria-labelledby=\"$2\"\n  data-item=\"${3:${1/(^[0-9. ]+)|([\\s_\\.-]+)|('(?:[a-z]|re|ve)(?=(?:[\\s_.-]|$)))|(\\w+)/$1${2:+ }$3${4:/capitalize}/g}}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$2\"&gt;${4:${3/(^[0-9. ]+)|([_\\.-]+)|('(?:[a-z]|re|ve)(?=(?:[\\s_.-]|$)))|(\\w+)/${2:+ }$3${4:/capitalize}/g}}&lt;/a&gt;&lt;/h2&gt;\n  $0\n\n&lt;/section&gt;"
+        ],
+        "prefix": "sss",
+        "description": "id+data-item+header from file name"
+    },
+    // See Open VS Code Issue: #112362
+    // https://github.com/microsoft/vscode/issues/112362#issuecomment-947556633
+    "section": {
+        "prefix": "section",
+        "body": [
+            "&lt;section\n  id=\"${1:section-id}\"\n  aria-labelledby=\"$1\"\n  data-item=\"${2:Title for Menu}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$1\"&gt;${3:$2}&lt;/a&gt;&lt;/h2&gt;\n  $0\n&lt;/section&gt;"
+        ],
+        "description": "Customize id, data-item and header. Add content."
+    },
+    "details": {
+        "prefix": "ddd",
+        "body": [
+            "&lt;details class=\"${1|alert,challenge,env,feedback,note,pivot,question,tip,tldr,warn|}\"${2: open}&gt;\n&lt;summary&gt;${3:Summary}&lt;/summary&gt;\n${4:$TM_SELECTED_TEXT}\n\n&lt;/details&gt;"
+        ],
+        "description": "details element"
+    },
+    "javascript code block": {
+        "prefix": "js",
+        "body": [
+            "```javascript\n$1\n```\n$0"
+        ],
+        "description": "javascript code block"
+    },
+    "json code block": {
+        "prefix": "json",
+        "body": [
+            "```json\n$1\n```\n$0"
+        ],
+        "description": "json code block"
+    },
+    "html code block": {
+        "prefix": "html",
+        "body": [
+            "```html\n$1\n```\n$0"
+        ],
+        "description": "html code block"
+    },
+    "md code block": {
+        "prefix": "md",
+        "body": [
+            "```md\n$1\n```\n$0"
+        ],
+        "description": "markdown code block"
+    },
+    "css code block": {
+        "prefix": "css",
+        "body": [
+            "```css\n$1\n```\n$0"
+        ],
+        "description": "css code block"
+    },
+    "bash code block": {
+        "prefix": "bash",
+        "body": [
+            "```bash-#w\n$1\n```\n$0"
+        ],
+        "description": "bash code block without numbering"
+    },
+    "insert image": {
+        "prefix": "img",
+        "body": [
+            "![${2:Caption}](images${1:/filename})"
+        ],
+        "description": "insert image"
+    }
+}</code></pre>
+<details class="pivot" open>
+<summary>
+Taking time to save time
+</summary>
+<p>It’s taken you several minutes to set up Markdown snippets, and you
+haven’t actually typed any of the content for your tutorial yet. It’s
+not obvious yet that these snippets will save you time. But trust me:
+once you see their power, you will want to create your own snippets for
+all the languages that you work with.</p>
+<p>Check out the official <a
+href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VS
+Code Snippet documentation</a> for more details.</p>
+<p>Next, you’ll see how I use a well-crafted snippet to generate a new
+<code>&lt;section&gt;</code> from each Markdown page I create.</p>
+</details>
+</section>
+<!-- 7. Testing Your Snippets -->
+<section id="testing-your-snippets" aria-labelledby="testing-your-snippets" data-item="7. Testing Your Snippets">
+<h2>
+<a href="#testing-your-snippets">Testing Your Snippets</a>
+</h2>
+<p>Each snippet has a <code>"prefix"</code> entry. For example, this
+snippet…</p>
+<pre class="language-json wrap"><code class="language-json wrap">"section": {
+  "prefix": "section",
+  "body": [
+    "&lt;section\n  id=\"${1:section-id}\"\n aria-labelledby=\"$1\"\n  data-item=\"${2:Title forMenu}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$1\"&gt;${3:$2}&lt;/a&gt;&lt;/h2&gt;\n $0\n&lt;/section&gt;"
+  ],
+  "description": "Customize id, data-item and headAdd content."
+}</code></pre>
+<p>… has the prefix <code>section</code>. If you type the word
+<code>section</code> into a file with the extension <code>.md</code>,
+and press the Tab key, the following text will be inserted into your
+file.</p>
+<pre class="language-md"><code class="language-md">&lt;section
+    id="<s>section-id</s>"
+    aria-labelledby="<s>section-id</s>"
+    data-item="Title for Menu"
+&gt;
+    &lt;h2&gt;&lt;a href="#<s>section-id</s>"&gt;Title for Menu&lt;/a&gt;&lt;/h2&gt;
+    
+&lt;/section&gt;</code></pre>
+<p>Notice that the three occurrences of the words
+<code>section-id</code> are highlighted. Start typing, and the text in
+all three places will change. This is the first <em>tabstop</em>.</p>
+<p>Press the Tab key, and the two occurrences of
+<code>Title for Menu</code> will be highlighted. Again, if you type, the
+text will be changed in both places. This is the second tabstop.</p>
+<pre class="language-md wrap"><code class="language-md wrap">&lt;section
+    id="section-id"
+    aria-labelledby="section-id"
+    data-item="<s>Title for Menu</s>"
+&gt;
+    &lt;h2&gt;&lt;a href="#section-id"&gt;<s>Title for Menu</s>&lt;/a&gt;&lt;/h2&gt;
+
+&lt;/section&gt;</code></pre>
+<p>Press the Tab key again, and now only the text for the
+<code>h2</code> link will be selected. This means that you can either
+provide the same entry in the menu as in the header, or provide a longer
+entry for the header.</p>
+<h2 id="creating-a-new-markdown-file-with-its-own-section">Creating a
+new Markdown file with its own section</h2>
+<p>HTM-Elves will get confused if you create a section inside another
+section. A better plan is to create a new Markdown file inside the
+<code>docs/md/</code> folder. This will be the second file in your
+project, so you could call it
+<code>02-Now_We're_Ready_To_Start.md</code>.</p>
+<p>Into the empty file, type <code>sss</code>. I chose this prefix
+because <code>s</code> is the first letter of ‘section’, and I am too
+lazy to move more than one finger. Press the Tab key. A much more
+complex snippet will read the file name and replace all the
+<code>-</code> dash and <code>_</code> underscore characters with
+spaces. It will also strip off the leading <code>0</code>, and the
+<code>.md</code> file extension.</p>
+<pre class="language-md wrap"><code class="language-md wrap">&lt;!-- <s>2. Now We're Ready To Start</s> --&gt;
+&lt;section
+  id="<s>2. Now We're Ready To Start</s>"
+  aria-labelledby="<s>2. Now We're Ready To Start</s>"
+  data-item="<s>2. Now We're Ready To Start</s>"
+&gt;
+  &lt;h2&gt;&lt;a href="#<s>2. Now We're Ready To Start</s>"&gt;<s>2. Now We're Ready To Start</s>/a&gt;&lt;/h2&gt;
+  
+
+&lt;/section&gt;</code></pre>
+<p>All the tabstops are selected, because they are interconnected. Type
+<code>Let's go!</code> to replace the current text, then press the Tab
+key 5 times. The entries for the different attributes will be formatted
+appropriately.</p>
+<pre class="language-md"><code class="language-md">&lt;!-- Let's go! --&gt;
+&lt;section
+  id="lets-go"
+  aria-labelledby="lets-go"
+  data-item="Let's Go!"
+&gt;
+  &lt;h2&gt;&lt;a href="#lets-go"&gt;Let's Go!&lt;/a&gt;&lt;/h2&gt;
+  
+
+&lt;/section&gt;</code></pre>
+<p>The cursor should now be flashing in the space just under the
+<code>&lt;h2&gt;</code> tag. Type <code>This is page 2</code>.</p>
+<p>Check your browser. If you still have <code>npm run watch</code>
+running, then you should see a new entry in the menu, and a new page
+when you select this entry:</p>
+<figure>
+<img src="images/PageTwo.webp" alt="You now have a second page" />
+<figcaption aria-hidden="true">You now have a second page</figcaption>
+</figure>
+<details class="pivot" open>
+<summary>
+Not just snippets
+</summary>
+<p>There are several other snippets that you haven’t tested yet, for
+inserting images, creating code listings with syntax highlighting, and
+adding optional details elements. I’ll introduce these over the cours of
+the next few sections.</p>
+<p>Next, though I’ll remind you of some of the standard things that
+Markdown can do, and you can see how Pandoc converts these into
+HTML.</p>
+</details>
+</section>
+<!-- 8. Paragraphs And Headings -->
+<section id="paragraphs-and-headings" aria-labelledby="paragraphs-and-headings" data-item="8. Paragraphs &amp; Headings">
+<h2>
+<a href="#paragraphs-and-headings">Paragraphs And Headings</a>
 </h2>
 </section>
 <!-- Images -->
@@ -342,6 +779,20 @@ Automatically</a>
 <h2>
 <a href="#automatic-publishing">Automatic Publishing</a>
 </h2>
+</section>
+<!-- 11. Target Or Last Child -->
+<section id="target-or-last-child" aria-labelledby="target-or-last-child" data-item="11. Target Or Last Child">
+<h2>
+<a href="#target-or-last-child">Target Or Last Child</a>
+</h2>
+</section>
+<!-- 12. Quirks Or Features -->
+<section id="quirks-or-features" aria-labelledby="quirks-or-features" data-item="12. Quirks Or Features?">
+<h2>
+<a href="#quirks-or-features">Quirks Or Features?</a>
+</h2>
+<p>Pandoc has its own opinion about when there should be blank lines in
+your Markdown text.</p>
 </section>
 <section id="intro" aria-labelledby="intro" data-item="1. Introduction">
 <h2>
