@@ -25,16 +25,83 @@ content="width=device-width, initial-scale=1.0"
 </header>
 
 <!-- Create a New Tutorial -->
-<section id="new-tutorial" aria-labelledby="new-tutorial" data-item="Creating A New Tutorial">
+<section id="new-tutorial" aria-labelledby="new-tutorial" data-item="2. Creating A New Tutorial">
 <h2>
 <a href="#new-tutorial">Creating A New Tutorial</a>
 </h2>
+<p>To create a new tutorial with HTM-Elves:</p>
+<ol type="1">
+<li>Open your <code>MyTutorials.github.io</code> folder in VS Code</li>
+<li>Open a Terminal window into this folder</li>
+<li>Run <code>npm run new</code>.</li>
+</ol>
+<p>You will be asked to give a name for your new tutorial. I propose
+“James’s Basics”, but the HTM-Elves don’t really like this. GitHub’s
+rules for naming repositories allow only standard ASCII alphanumeric
+characters or the <code>-</code> dash symbol. Any other characters (like
+the <code>'</code> apostrophe) will be replaced with dashes. The
+HTM-Elves apply the same rules.</p>
+<figure>
+<img src="images/James-s-Basics.webp"
+alt="‘James’s Basics’ does not comply with GitHub repository naming rules" />
+<figcaption aria-hidden="true">‘James’s Basics’ does not comply with
+GitHub repository naming rules</figcaption>
+</figure>
+<p>I decide to use the simpler name “The Basics”…</p>
+<figure>
+<img src="images/TheBasics.webp" alt="Entering a new name" />
+<figcaption aria-hidden="true">Entering a new name</figcaption>
+</figure>
+<p>…but when I press Enter, I’m told that the space still needs to be
+replaced.</p>
+<figure>
+<img src="images/AcceptName.webp"
+alt="The space in ‘The Basics’ needs to be replaced" />
+<figcaption aria-hidden="true">The space in ‘The Basics’ needs to be
+replaced</figcaption>
+</figure>
+<p>I’m happy enough with “The-Basics” as my tutorial name, so I simply
+press Enter to accept it…</p>
+<figure>
+<img src="images/TutorialCreated.webp"
+alt="A new tutorial is created" />
+<figcaption aria-hidden="true">A new tutorial is created</figcaption>
+</figure>
+<p>… and the HTM-Elves create a new directory called
+<code>The-Basics</code> for me inside my <code>MyTutorials</code> parent
+folder. At the same time, it opened a page in my favourite browser:</p>
+<figure>
+<img src="images/InTheBrowser.webp"
+alt="The new tutorial as it appears in a browser" />
+<figcaption aria-hidden="true">The new tutorial as it appears in a
+browser</figcaption>
+</figure>
+<details class="pivot" open>
+<summary>
+Summary
+</summary>
+<p>The new <code>The-Basics</code> directory contains a Markdown file at
+<code>docs/md/99-Intro.md</code>. This is what has been converted into
+the HTML file at <code>docs/index.html</code>, which is what is now
+displaying in your browser.</p>
+<p>The <code>docs/md/99-Intro.md</code> starts with a <a
+href="">YAML</a> block which defines some variables which Pandoc uses to
+create the page title, its header and sub-header, a publication date in
+the top right corner, and links to a GitHub repository that you have not
+yet created.</p>
+<p>It also contains some Markdown text which appears in the main part of
+the page.</p>
+<p>Before dealing with either of these topics in depth, I’ll show you
+how to make any changes you make to your Markdown files update live in
+your browser.</p>
+</details>
 </section>
 <!-- Live Server -->
-<section id="live-server" aria-labelledby="live-server" data-item="Using Live Server">
+<section id="live-server" aria-labelledby="live-server" data-item="3. Using Live Server">
 <h2>
 <a href="#live-server">Using Live Server</a>
 </h2>
+VS Code
 </section>
 <!-- Section Snippets -->
 <section id="section-snippets" aria-labelledby="section-snippets" data-item="Snippets and Sections">
@@ -64,7 +131,7 @@ content="width=device-width, initial-scale=1.0"
 <section id="automatic-repo-creation" aria-labelledby="automatic-repo-creation" data-item="Automatic Repo Creation">
 <h2>
 <a href="#automatic-repo-creation">Creating a GitHub Repository
-Automaticall</a>
+Automatically</a>
 </h2>
 </section>
 <!-- Automatic Publishing -->
@@ -73,11 +140,69 @@ Automaticall</a>
 <a href="#automatic-publishing">Automatic Publishing</a>
 </h2>
 </section>
-<section id="intro" aria-labelledby="intro" data-item="Introduction">
+<section id="intro" aria-labelledby="intro" data-item="1. Introduction">
 <h2>
 <a href="#intro">Introduction</a>
 </h2>
-<p>TDB</p>
+<p>This is the second article about using the HTM-Elves workflow to
+write your own tutorials. I am assuming that you have already read <a
+href="https://htm-elves.github.io/Getting-Started">Getting Started with
+HTM-Elves</a>, and that you have already:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Create your own GitHub
+Organization where you can publish tutorials</label></li>
+<li><label><input type="checkbox" checked="" />Forked the HTM-Elves
+repository, to use as the root of your tutorial
+organization</label></li>
+<li><label><input type="checkbox" checked="" />Published your forked
+repository</label></li>
+<li><label><input type="checkbox" checked="" />Cloned your fork of the
+HTM-Elves repository to your local computer</label></li>
+<li><label><input type="checkbox" checked="" />Installed Pandoc and
+Watchman and a set of Node modules</label></li>
+<li><label><input type="checkbox" checked="" />Used HTM-Elves to
+generate a Demo tutorial</label></li>
+<li><label><input type="checkbox" checked="" />Published the Demo
+tutorial in your GitHub tutorial organization.</label></li>
+</ul>
+<p>If not, read <a
+href="https://htm-elves.github.io/Getting-Started">Getting Started with
+HTM-Elves</a> first, and follow the instructions step-by-step.</p>
+<h2 id="what-youll-find-here">What you’ll find here</h2>
+<p>In this article, you will:</p>
+<ol type="1">
+<li>Create a new tutorial from scratch, in Markdown</li>
+<li>Learn how to see the resulting HTML page in real time</li>
+<li>Learn how to customize the HTML template</li>
+<li>Learn to use VS Code snippets to simplify repetitive tasks</li>
+<li>Learn basic formatting techniques in Markdown</li>
+<li>See how to display code listings with syntax highlighing</li>
+<li>Learn how to automate common GitHub tasks</li>
+<li>Publish your tutorial, using the steps you learnt in <a
+href="https://htm-elves.github.io/Getting-Started">Getting Started with
+HTM-Elves</a></li>
+<li>Update the index for your tutorials.</li>
+</ol>
+<details class="tip" open>
+<summary>
+All your own work?
+</summary>
+<p>You probably already have a clear idea about the first tutorial you
+want to write, but I don’t know what your idea is. For simplicity, I
+will follow my own idea, so the examples I give will be generic. Please
+feel free to use your own content rather than the text, code and images
+that I provide.</p>
+</details>
+<details class="pivot" open>
+<summary>
+An Organization by any other name…
+</summary>
+<p>I’ll imagine that you created a GitHub Organization called
+<code>MyTutorials</code>, and that you have created a folder called
+<code>MyTutorials</code>, into which you have cloned a fork of
+HTM-Elves, named <code>MyTutorials.github.io</code>. In the text that
+follows, please use your own folder name and repository name
+instead.</p>
 </details>
 </section>
 
