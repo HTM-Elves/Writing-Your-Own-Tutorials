@@ -24,19 +24,30 @@ I decide to use the simpler name "The Basics"...
 
 ![The space in 'The Basics' needs to be replaced](images/AcceptName.webp)
 
-I'm happy enough with "The-Basics" as my tutorial name, so I simply press Enter to accept it...
+I'm happy enough with "The-Basics" as my tutorial name, so I simply press Enter to accept it.
 
 ![A new tutorial is created](images/TutorialCreated.webp)
 
-... and the HTM-Elves create a new directory called `The-Basics` for me inside my `MyTutorials` parent folder. At the same time, it opened a page in my favourite browser:
+Immediately, the HTM-Elves create a new directory called `The-Basics` for me inside my `MyTutorials` parent folder. At the same time, they open a page in my favourite browser:
 
 ![The new tutorial as it appears in a browser](images/InTheBrowser.webp)
+
+<details class="note" open>
+<summary>Why 99-Intro.md?</summary>
+Pandoc will treat all the files with an `.md` extension inside the `doc/md/` folder in alphabetical order. To ensure that they are treated in the right order, I recommend that you use zero-padded names like `01-Getting-Started.md`, `02-Test-Early-Test-Often.md`.
+
+If you don't use zero-padding, then `11-Advanced-Techniques.md` will be treated before `2-Test-Early-Test-Often.md`, because `11` comes _alphabetically_ before `2`.
+
+However, the CSS used to create a separate "page" for each Markdown file will automatically show the _last_ section when you first open the tutorial. (I'll explain this in detail in section _5. Snippets and Sections_.) For this reason, the _first_ Markdown page must have the _highest_ number.
+
+So, by default, the first page is named `99-Intro.md`.
+</details>
 
 <details class="pivot" open>
 <summary>Summary</summary>
 The new `The-Basics` directory contains a Markdown file at `docs/md/99-Intro.md`. This is what has been converted into the HTML file at `docs/index.html`, which is what is now displaying in your browser.
 
-The `docs/md/99-Intro.md` starts with a [YAML]() block which defines some variables which Pandoc uses to create the page title, its header and sub-header, a publication date in the top right corner, and links to a GitHub repository that you have not yet created.
+The `docs/md/99-Intro.md` starts with a [YAML](https://en.wikipedia.org/wiki/YAML) block which defines some variables which Pandoc uses to create the page title, its header and sub-header, a publication date in the top right corner, and links to a GitHub repository that you have not yet created.
 
 It also contains some Markdown text which appears in the main part of the page.
 

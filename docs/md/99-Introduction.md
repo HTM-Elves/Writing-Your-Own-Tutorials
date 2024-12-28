@@ -33,7 +33,7 @@ In this article, you will:
 3. Learn how to customize the HTML template
 4. Learn to use VS Code snippets to simplify repetitive tasks
 5. Learn basic formatting techniques in Markdown
-6. See how to display code listings with syntax highlighing
+6. See how to display code listings with syntax highlighting
 7. Learn how to automate common GitHub tasks
 8. Publish your tutorial, using the steps you learnt in [Getting Started with HTM-Elves](https://htm-elves.github.io/Getting-Started)
 9. Update the index for your tutorials.

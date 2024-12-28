@@ -61,21 +61,41 @@ alt="The space in ‘The Basics’ needs to be replaced" />
 replaced</figcaption>
 </figure>
 <p>I’m happy enough with “The-Basics” as my tutorial name, so I simply
-press Enter to accept it…</p>
+press Enter to accept it.</p>
 <figure>
 <img src="images/TutorialCreated.webp"
 alt="A new tutorial is created" />
 <figcaption aria-hidden="true">A new tutorial is created</figcaption>
 </figure>
-<p>… and the HTM-Elves create a new directory called
+<p>Immediately, the HTM-Elves create a new directory called
 <code>The-Basics</code> for me inside my <code>MyTutorials</code> parent
-folder. At the same time, it opened a page in my favourite browser:</p>
+folder. At the same time, they open a page in my favourite browser:</p>
 <figure>
 <img src="images/InTheBrowser.webp"
 alt="The new tutorial as it appears in a browser" />
 <figcaption aria-hidden="true">The new tutorial as it appears in a
 browser</figcaption>
 </figure>
+<details class="note" open>
+<summary>
+Why 99-Intro.md?
+</summary>
+<p>Pandoc will treat all the files with an <code>.md</code> extension
+inside the <code>doc/md/</code> folder in alphabetical order. To ensure
+that they are treated in the right order, I recommend that you use
+zero-padded names like <code>01-Getting-Started.md</code>,
+<code>02-Test-Early-Test-Often.md</code>.</p>
+<p>If you don’t use zero-padding, then
+<code>11-Advanced-Techniques.md</code> will be treated before
+<code>2-Test-Early-Test-Often.md</code>, because <code>11</code> comes
+<em>alphabetically</em> before <code>2</code>.</p>
+<p>However, the CSS used to create a separate “page” for each Markdown
+file will automatically show the <em>last</em> section when you first
+open the tutorial. (I’ll explain this in detail in section <em>5.
+Snippets and Sections</em>.) For this reason, the <em>first</em>
+Markdown page must have the <em>highest</em> number.</p>
+So, by default, the first page is named <code>99-Intro.md</code>.
+</details>
 <details class="pivot" open>
 <summary>
 Summary
@@ -85,10 +105,10 @@ Summary
 the HTML file at <code>docs/index.html</code>, which is what is now
 displaying in your browser.</p>
 <p>The <code>docs/md/99-Intro.md</code> starts with a <a
-href="">YAML</a> block which defines some variables which Pandoc uses to
-create the page title, its header and sub-header, a publication date in
-the top right corner, and links to a GitHub repository that you have not
-yet created.</p>
+href="https://en.wikipedia.org/wiki/YAML">YAML</a> block which defines
+some variables which Pandoc uses to create the page title, its header
+and sub-header, a publication date in the top right corner, and links to
+a GitHub repository that you have not yet created.</p>
 <p>It also contains some Markdown text which appears in the main part of
 the page.</p>
 <p>Before dealing with either of these topics in depth, I’ll show you
@@ -96,15 +116,194 @@ how to make any changes you make to your Markdown files update live in
 your browser.</p>
 </details>
 </section>
-<!-- Live Server -->
-<section id="live-server" aria-labelledby="live-server" data-item="3. Using Live Server">
+<section id="live-reload" aria-labelledby="live-reload" data-item="3. Live Reload">
 <h2>
-<a href="#live-server">Using Live Server</a>
+<a href="#live-server">Live Reload with Live Server and Watchman</a>
 </h2>
-VS Code
+<p>VS Code Marketplace provides a vast collection of free extensions for
+VS Code. One of these is <a
+href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live
+Server</a>, by Ritwick Dey. Live Server is a local development server
+with live reload feature. When you change contents of an HTML page
+served by Live Server, your browser automatically reloads the modified
+HTML page.</p>
+<p>To install Live Server:</p>
+<ol type="1">
+<li>Choose the menu item View &gt; Extensions, or click on the
+Extensions icon in the Activity Bar, as shown in Figure 6 below.</li>
+<li>Start typing <code>Live Server</code> in the Search Bar at the top
+of the Extensions panel</li>
+<li>Click on Live Server by Ritwick Dey</li>
+<li>Click on the blue Install button.</li>
+</ol>
+<figure>
+<img src="images/InstallLiveServer.webp" alt="Install Live Server" />
+<figcaption aria-hidden="true">Install Live Server</figcaption>
+</figure>
+<details class="alert" open>
+<summary>
+The right installations
+</summary>
+<p>There is another extension with the name “Live Server (Five Server)”,
+by Yannick. It has a very similar logo, but this is not the extension
+that I recommend.</p>
+<p><strong>Be sure to select Live Server by Ritwick Dey.</strong></p>
+<p><strong>You must also have <a
+href="https://facebook.github.io/watchman/">Meta’s open source Watchman
+service</a> installed before you continue.</strong></p>
+</details>
+<h2 id="using-live-server-with-watchman">Using Live Server with
+Watchman</h2>
+<p>If you modify the file at <code>docs/md/99-intro.md</code> now,
+nothing will change in your browser. You need to start the Watchman
+service, to trigger Pandoc when any Markdown files change, and you need
+to serve <code>docs/index.html</code> with Live Server, so that the
+browser will reload the page each time Pandoc updates
+<code>docs/index.html</code>.</p>
+<p>To do this:</p>
+<ol type="1">
+<li>Open a Terminal window on the <code>The-Basics</code> directory (or
+whatever directory you have created for your new tutorial).</li>
+<li>Run the command <code>npm run watch</code></li>
+<li>In the Explorer pane, Right-Click on the file at
+<code>The-Basics/docs/index.html</code></li>
+<li>In the contextual menu that opens, choose Open With Live Server</li>
+</ol>
+<figure>
+<img src="images/WatchLive.webp"
+alt="Making the browser update live as you edit the Markdown files" />
+<figcaption aria-hidden="true">Making the browser update live as you
+edit the Markdown files</figcaption>
+</figure>
+<p>A new tab should open in your favourite browser, with a live version
+of your tutorial. If you now edit <code>docs/md/99-intro.md</code>, you
+should see the changes immediately in your browser.</p>
+<figure>
+<img src="images/LiveUpdate.webp"
+alt="As you edit the Markdown files, the browser reloads index.html" />
+<figcaption aria-hidden="true">As you edit the Markdown files, the
+browser reloads index.html</figcaption>
+</figure>
+<details class="pivot" open>
+<summary>
+Side by Side
+</summary>
+<p>Pandoc has some specific opinions about where blank lines are
+required. If you don’t respect these opinions, Pandoc might not format
+your pages the way you expect. Also, the captions for images are
+numbered dynamically, and sometimes you may want to refer to a
+particular image by its number.</p>
+<p>For these reasons, I like to work with the live browser preview open
+alongside the Markdown page that I am editing (as shown in Figure 8
+above).</p>
+<p>You’ll see in the next steps how to edit the settings for the title,
+headers and links, and also how to format the text itself.</p>
+</details>
+</section>
+<!-- YAML -->
+<section id="yaml" aria-labelledby="yaml" data-item="4. The YAML Block">
+<h2>
+<a href="#yaml">The YAML Block</a>
+</h2>
+<p>Pandoc can be used to convert documents between any of about 60
+different file formats. Pandoc not just useful for converting from
+Markdown to HTML. To help with conversion, Pandoc allows you to include
+<a
+href="https://pandoc.org/chunkedhtml-demo/8.10-metadata-blocks.html#extension-yaml_metadata_block">YAML
+meta-data blocks</a> inside any of the source documents to be
+converted.</p>
+<p>When you run <code>npm run new</code>, the HTM-Elves generate a YAML
+block at the beginning of the file <code>doc/md/99-Intro.md</code>,
+using the following logic:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;tutorial name&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> (set subtitle in 99-Intro.md, if required)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span><span class="kw">:</span><span class="at"> &lt;current month and year&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">organization</span><span class="kw">:</span><span class="at"> &lt;name of parent folder&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">repo</span><span class="kw">:</span><span class="at"> &lt;tutorial name&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>A YAML block defines a variable name (like <code>repo</code>) and a
+value for that variable (like <code>The-Basics</code>).</p>
+<p>The file at <code>MyTutorials.github.io/public/template.html</code>,
+contains a template that is used to wrap your converted Markdown files
+in. It starts like this:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;UTF-8&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ot">name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ot">content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>$title$<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;../public/styles.css&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;../public/media-queries.css&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;../public/prism/prism.css&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> defer src</span><span class="op">=</span><span class="st">&quot;../public/prism/prism.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> defer src</span><span class="op">=</span><span class="st">&quot;../public/storage.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> defer src</span><span class="op">=</span><span class="st">&quot;../public/script.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">main</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;main&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>$title$<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span>$subtitle$<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">h4</span><span class="dt">&gt;</span>$month$<span class="dt">&lt;/</span><span class="kw">h4</span><span class="dt">&gt;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>$body$</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Many lines skipped --&gt;</span></span></code></pre></div>
+<p>Notice the entries for <code>$title$</code>, <code>$subtitle$</code>,
+<code>$month$</code> and <code>$body$</code>. Near the end of the file
+you will see more entries for <code>$organization$</code> and
+<code>$repo$</code>.</p>
+<pre class="html-#105"><code>&lt;div id=&quot;repo&quot;&gt;
+  &lt;a href=&quot;https://github.com/$organization$/$repo$/issues/new&quot;&gt;
+    Feedback
+  &lt;/a&gt;
+
+  &lt;a
+    class=&quot;repo&quot;
+    href=&quot;https://github.com/$organization$/$repo$&quot;
+  &gt;
+    &lt;img src=&quot;../public/svg/github.svg&quot; alt=&quot;github logo&quot;&gt;
+    &lt;span&gt;GitHub repository&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+<p>Pandoc will replace <code>$body$</code> with the result of the
+conversion of all the Markdown files. For the other entries in the
+<code>$double_dollar$</code> format, Pandoc will replace the entry with
+the value for that entry defined in the YAML block.</p>
+<details class="note" open>
+<summary>
+<code>organization</code> and <code>repo</code>
+</summary>
+<p>You should <strong>leave the values for <code>organization</code> and
+<code>repo</code> exactly as they are</strong>. If you change these,
+then the links to the GitHub repo for your tutorial (which you haven’t
+created yet) will break.</p>
+<p>You are free to change the values for <code>title</code>,
+<code>subtitle</code> and <code>month</code>, if you wish.</p>
+</details>
+<details class="pivot" open>
+<summary>
+A single YAML block
+</summary>
+<p>Pandoc allows you to have multiple YAML blocks, but in my experience
+it is safest to use only one, and to place it in the last Markdown file
+to be treated. <code>docs/md/99-Intro.md</code> is thus an excellent
+place to store the variables that will be used by the
+<code>template.html</code> file.</p>
+<p>In the next section, you’ll see how to create a different “page” for
+each Markdown file.</p>
+</details>
 </section>
 <!-- Section Snippets -->
-<section id="section-snippets" aria-labelledby="section-snippets" data-item="Snippets and Sections">
+<section id="section-snippets" aria-labelledby="section-snippets" data-item="5. Snippets and Sections">
 <h2>
 <a href="#section-snippets">Snippets and Sections</a>
 </h2>
@@ -176,7 +375,7 @@ HTM-Elves</a> first, and follow the instructions step-by-step.</p>
 <li>Learn how to customize the HTML template</li>
 <li>Learn to use VS Code snippets to simplify repetitive tasks</li>
 <li>Learn basic formatting techniques in Markdown</li>
-<li>See how to display code listings with syntax highlighing</li>
+<li>See how to display code listings with syntax highlighting</li>
 <li>Learn how to automate common GitHub tasks</li>
 <li>Publish your tutorial, using the steps you learnt in <a
 href="https://htm-elves.github.io/Getting-Started">Getting Started with
