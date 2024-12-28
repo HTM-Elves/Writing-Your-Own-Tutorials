@@ -2,7 +2,7 @@
 <section
 id="images"
 aria-labelledby="images"
-data-item="6. Images"
+data-item="9. Images"
 >
 <h2><a href="#images">Images</a></h2>
 

@@ -50,7 +50,7 @@ When you click on an item in the menu, or on one of the buttons in the footer, t
 
 The CSS pseudo-class `:target` matches any element whose `id` is the same as the `fragment`. My CSS hides all `<section>` elements which do not have the same `id` as the `fragment`, and shows only the one that does.
 
-Actually, it's slightly more complicated than that (which is why the first Markdown file has the number `99`) but I'll explain in section [13. Target or Last Child](#target-or-last-child).
+Actually, it's slightly more complicated than that (which is why the first Markdown file has the number `99`) but I'll explain in section [14. Target or Last Child](#target-or-last-child).
 
 </details>
 
