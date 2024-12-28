@@ -10,7 +10,7 @@ Pandoc can be used to convert documents between any of about 60 different file f
 
 When you run `npm run new`, the HTM-Elves generate a YAML block at the beginning of the file `doc/md/99-Intro.md`, using the following logic:
 
-```yaml
+```yaml-#
 ---
 title: <tutorial name>
 subtitle: (set subtitle in 99-Intro.md, if required)
@@ -26,7 +26,7 @@ The file at `MyTutorials.github.io/public/template.html`, contains a template th
 
 
 ```html
-<!DOCTYPE html>
+<i><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -34,7 +34,7 @@ The file at `MyTutorials.github.io/public/template.html`, contains a template th
 name="viewport"
 content="width=device-width, initial-scale=1.0"
 >
-<title>$title$</title>
+<title></i><b>$title$</b><i></title>
 <link rel="stylesheet" href="../public/styles.css">
 <link rel="stylesheet" href="../public/media-queries.css">
 <link rel="stylesheet" href="../public/prism/prism.css">
@@ -47,40 +47,48 @@ content="width=device-width, initial-scale=1.0"
 <body>
   <main id="main">
     <header>
-      <h1>$title$</h1>
-      <h3>$subtitle$</h3>
-      <h4>$month$</h4>
+      <h1></i><b>$title$</b><i></h1>
+      <h3></i><b>$subtitle$</b><i></h3>
+      <h4></i><b>$month$</b><i></h4>
     </header>
 
-$body$
+</i><b>$body$</b>
 <!-- Many lines skipped -->
 ```
 
 Notice the entries for `$title$`, `$subtitle$`, `$month$` and `$body$`. Near the end of the file you will see more entries for `$organization$` and `$repo$`. 
 
 ```html-#105
-<div id="repo">
-  <a href="https://github.com/$organization$/$repo$/issues/new">
+<i><div id="repo">
+  <a href="https://github.com/</i><b>$organization$/$repo$</b><i>/issues/new">
     Feedback
   </a>
 
   <a
     class="repo"
-    href="https://github.com/$organization$/$repo$"
+    href="https://github.com/</i><b>$organization$/$repo$</b><i>"
   >
     <img src="../public/svg/github.svg" alt="github logo">
     <span>GitHub repository</span>
   </a>
-</div>
+</div></i>
 ```
 
-Pandoc will replace `$body$` with the result of the conversion of all the Markdown files. For the other entries in the `$double_dollar$` format, Pandoc will replace the entry with the value for that entry defined in the YAML block.
+Pandoc will replace `$body$` with the result of the conversion of all the Markdown files. For the other entries in the `$double_dollar$` format, Pandoc will replace the entry with the value for that entry defined in the YAML block. So, for example, ...
+```html-#112
+ <i>href="https://github.com/</i><b>$organization$/$repo$</b>"
+```
+... in `MyTutorials.github.io/public/template.html` will become...
+```html-#
+ <i>href="https://github.com/</i><b>MyTutorials/The-Basics</b>"
+ ```
+ ... in the output in `doc/index.html`.
 
 <details class="note" open>
 <summary>`organization` and `repo`</summary>
 You should **leave the values for `organization` and `repo` exactly as they are**. If you change these, then the links to the GitHub repo for your tutorial (which you haven't created yet) will break.
 
-You are free to change the values for `title`, `subtitle` and `month`, if you wish.
+You are free to change the values for `title`, `subtitle` and `month`, as you wish.
 
 </details>
 

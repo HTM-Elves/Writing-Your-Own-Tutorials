@@ -215,69 +215,73 @@ converted.</p>
 <p>When you run <code>npm run new</code>, the HTM-Elves generate a YAML
 block at the beginning of the file <code>doc/md/99-Intro.md</code>,
 using the following logic:</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;tutorial name&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> (set subtitle in 99-Intro.md, if required)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span><span class="kw">:</span><span class="at"> &lt;current month and year&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">organization</span><span class="kw">:</span><span class="at"> &lt;name of parent folder&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">repo</span><span class="kw">:</span><span class="at"> &lt;tutorial name&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<pre class="language-yaml"><code class="language-yaml">---
+title: &lt;tutorial name&gt;
+subtitle: (set subtitle in 99-Intro.md, if required)
+month: &lt;current month and year&gt;
+organization: &lt;name of parent folder&gt;
+repo: &lt;tutorial name&gt;
+---</code></pre>
 <p>A YAML block defines a variable name (like <code>repo</code>) and a
 value for that variable (like <code>The-Basics</code>).</p>
 <p>The file at <code>MyTutorials.github.io/public/template.html</code>,
 contains a template that is used to wrap your converted Markdown files
 in. It starts like this:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;UTF-8&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ot">name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ot">content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&gt;</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>$title$<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;../public/styles.css&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;../public/media-queries.css&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;../public/prism/prism.css&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> defer src</span><span class="op">=</span><span class="st">&quot;../public/prism/prism.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> defer src</span><span class="op">=</span><span class="st">&quot;../public/storage.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> defer src</span><span class="op">=</span><span class="st">&quot;../public/script.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">main</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;main&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>$title$<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span>$subtitle$<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">h4</span><span class="dt">&gt;</span>$month$<span class="dt">&lt;/</span><span class="kw">h4</span><span class="dt">&gt;</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>$body$</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Many lines skipped --&gt;</span></span></code></pre></div>
+<pre class="language-html line-numbers"><code class="language-html line-numbers"><i>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+&gt;
+&lt;title&gt;</i><b>$title$</b><i>&lt;/title&gt;
+&lt;link rel="stylesheet" href="../public/styles.css"&gt;
+&lt;link rel="stylesheet" href="../public/media-queries.css"&gt;
+&lt;link rel="stylesheet" href="../public/prism/prism.css"&gt;
+
+&lt;script defer src="../public/prism/prism.js"&gt;&lt;/script&gt;
+&lt;script defer src="../public/storage.js"&gt;&lt;/script&gt;
+&lt;script defer src="../public/script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;main id="main"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;</i><b>$title$</b><i>&lt;/h1&gt;
+      &lt;h3&gt;</i><b>$subtitle$</b><i>&lt;/h3&gt;
+      &lt;h4&gt;</i><b>$month$</b><i>&lt;/h4&gt;
+    &lt;/header&gt;
+
+</i><b>$body$</b>
+&lt;!-- Many lines skipped --&gt;</code></pre>
 <p>Notice the entries for <code>$title$</code>, <code>$subtitle$</code>,
 <code>$month$</code> and <code>$body$</code>. Near the end of the file
 you will see more entries for <code>$organization$</code> and
 <code>$repo$</code>.</p>
-<pre class="html-#105"><code>&lt;div id=&quot;repo&quot;&gt;
-  &lt;a href=&quot;https://github.com/$organization$/$repo$/issues/new&quot;&gt;
+<pre class="language-html line-numbers" data-start="105"><code class="language-html line-numbers"><i>&lt;div id="repo"&gt;
+  &lt;a href="https://github.com/</i><b>$organization$/$repo$</b><i>/issues/new"&gt;
     Feedback
   &lt;/a&gt;
 
   &lt;a
-    class=&quot;repo&quot;
-    href=&quot;https://github.com/$organization$/$repo$&quot;
+    class="repo"
+    href="https://github.com/</i><b>$organization$/$repo$</b><i>"
   &gt;
-    &lt;img src=&quot;../public/svg/github.svg&quot; alt=&quot;github logo&quot;&gt;
+    &lt;img src="../public/svg/github.svg" alt="github logo"&gt;
     &lt;span&gt;GitHub repository&lt;/span&gt;
   &lt;/a&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</i></code></pre>
 <p>Pandoc will replace <code>$body$</code> with the result of the
 conversion of all the Markdown files. For the other entries in the
 <code>$double_dollar$</code> format, Pandoc will replace the entry with
-the value for that entry defined in the YAML block.</p>
+the value for that entry defined in the YAML block. So, for example,
+…</p>
+<pre class="language-html line-numbers" data-start="112"><code class="language-html line-numbers"> <i>href="https://github.com/</i><b>$organization$/$repo$</b>"</code></pre>
+<p>… in <code>MyTutorials.github.io/public/template.html</code> will
+become…</p>
+<pre class="language-html"><code class="language-html"> <i>href="https://github.com/</i><b>MyTutorials/The-Basics</b>"</code></pre>
+<p>… in the output in <code>doc/index.html</code>.</p>
 <details class="note" open>
 <summary>
 <code>organization</code> and <code>repo</code>
@@ -287,7 +291,7 @@ the value for that entry defined in the YAML block.</p>
 then the links to the GitHub repo for your tutorial (which you haven’t
 created yet) will break.</p>
 <p>You are free to change the values for <code>title</code>,
-<code>subtitle</code> and <code>month</code>, if you wish.</p>
+<code>subtitle</code> and <code>month</code>, as you wish.</p>
 </details>
 <details class="pivot" open>
 <summary>
@@ -308,33 +312,33 @@ each Markdown file.</p>
 <a href="#section-snippets">Snippets and Sections</a>
 </h2>
 </section>
-<!-- Details -->
-<section id="details" aria-labelledby="details" data-item="Details">
-<h2>
-<a href="#details">Details</a>
-</h2>
-</section>
 <!-- Images -->
-<section id="images" aria-labelledby="images" data-item="Images">
+<section id="images" aria-labelledby="images" data-item="6. Images">
 <h2>
 <a href="#images">Images</a>
 </h2>
 </section>
 <!-- Code Listings -->
-<section id="code-listings" aria-labelledby="code-listings" data-item="Code Listings">
+<section id="code-listings" aria-labelledby="code-listings" data-item="7. Code Listings">
 <h2>
 <a href="#code-listings">Code Listings</a>
 </h2>
 </section>
+<!-- Details -->
+<section id="details" aria-labelledby="details" data-item="8. Details">
+<h2>
+<a href="#details">Details</a>
+</h2>
+</section>
 <!-- Automatic Repo Creation -->
-<section id="automatic-repo-creation" aria-labelledby="automatic-repo-creation" data-item="Automatic Repo Creation">
+<section id="automatic-repo-creation" aria-labelledby="automatic-repo-creation" data-item="9. Automatic Repo Creation">
 <h2>
 <a href="#automatic-repo-creation">Creating a GitHub Repository
 Automatically</a>
 </h2>
 </section>
 <!-- Automatic Publishing -->
-<section id="automatic-publishing" aria-labelledby="automatic-publishing" data-item="Automatic Publishing">
+<section id="automatic-publishing" aria-labelledby="automatic-publishing" data-item="10. Automatic Publishing">
 <h2>
 <a href="#automatic-publishing">Automatic Publishing</a>
 </h2>
