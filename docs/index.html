@@ -24,8 +24,7 @@ content="width=device-width, initial-scale=1.0"
 <h4>December 2024</h4>
 </header>
 
-<!-- Create a New Tutorial -->
-<section id="new-tutorial" aria-labelledby="new-tutorial" data-item="2. Creating A New Tutorial">
+<section id="new-tutorial" aria-labelledby="new-tutorial" data-item="Create A New Tutorial">
 <h2>
 <a href="#new-tutorial">Creating A New Tutorial</a>
 </h2>
@@ -35,198 +34,171 @@ content="width=device-width, initial-scale=1.0"
 <li>Open a Terminal window into this folder</li>
 <li>Run <code>npm run new</code>.</li>
 </ol>
-<p>You will be asked to give a name for your new tutorial. I propose
-“James’s Basics”, but the HTM-Elves don’t really like this. GitHub’s
-rules for naming repositories allow only standard ASCII alphanumeric
-characters or the <code>-</code> dash symbol. Any other characters (like
-the <code>'</code> apostrophe) will be replaced with dashes. The
-HTM-Elves apply the same rules.</p>
+<p>You will be asked to give a name for your new tutorial. I initially
+chose “Using CSS’s Counters”.</p>
 <figure>
-<img src="images/James-s-Basics.webp"
-alt="‘James’s Basics’ does not comply with GitHub repository naming rules" />
-<figcaption aria-hidden="true">‘James’s Basics’ does not comply with
-GitHub repository naming rules</figcaption>
+<img src="images/FirstAttempt.webp"
+alt="’First attempt, with a non-alphanumeric character" />
+<figcaption aria-hidden="true">’First attempt, with a non-alphanumeric
+character</figcaption>
 </figure>
-<p>I decide to use the simpler name “The Basics”…</p>
+<p>However, the HTM-Elves don’t really like this. GitHub’s rules for
+naming repositories allow only standard ASCII alphanumeric characters or
+the <code>-</code> dash symbol. Any other characters (like the
+<code>'</code> apostrophe) will be replaced with dashes. The HTM-Elves
+apply the same rules and change my proposed name to
+<code>Using-CSS-s-Counters</code>, which is ugly.</p>
+<p>Now that I have made my point about standard ASCII alphanumeric
+characters, I decide to use a more natural name: “Using CSS
+Counters”…</p>
 <figure>
-<img src="images/TheBasics.webp" alt="Entering a new name" />
+<img src="images/RevisedName.webp" alt="Entering a new name" />
 <figcaption aria-hidden="true">Entering a new name</figcaption>
 </figure>
-<p>…but when I press Enter, I’m told that the space still needs to be
+<p>…but when I press Enter, I’m told that the space still need to be
 replaced.</p>
 <figure>
-<img src="images/AcceptName.webp"
-alt="The space in ‘The Basics’ needs to be replaced" />
-<figcaption aria-hidden="true">The space in ‘The Basics’ needs to be
-replaced</figcaption>
+<img src="images/AcceptedName.webp"
+alt="The spaces in ‘Using CSS Counters’ needs to be replaced" />
+<figcaption aria-hidden="true">The spaces in ‘Using CSS Counters’ needs
+to be replaced</figcaption>
 </figure>
-<p>I’m happy enough with “The-Basics” as my tutorial name, so I simply
-press Enter to accept it.</p>
+<p>I’m happy enough with “Using-CSS-Counters” as my tutorial name, so I
+simply press Enter to accept it.</p>
 <figure>
-<img src="images/TutorialCreated.webp"
-alt="A new tutorial is created" />
+<img src="images/WatchLive.webp" alt="A new tutorial is created" />
 <figcaption aria-hidden="true">A new tutorial is created</figcaption>
 </figure>
-<p>Immediately, the HTM-Elves create a new directory called
-<code>The-Basics</code> for me inside my <code>MyTutorials</code> parent
-folder. At the same time, they open a page in my favourite browser:</p>
+<p>Immediately, HTM-Elves:</p>
+<ul>
+<li>Creates a new directory called <code>Using-CSS-Counters</code> for
+me inside my <code>MyTutorials</code> parent folder</li>
+<li>Creates a Git repository inside this directory</li>
+<li>Creates a new GitHub repository called
+<code>Using-CSS-Counters</code> for me inside my
+<code>MyTutorials</code> organization online</li>
+<li>Makes an initial <code>commit</code></li>
+<li>Sets this new GitHub repository up as the <code>origin</code> for my
+local Git repository</li>
+<li>Pushes the initial <code>commit</code> to the GitHub repository</li>
+<li>Opens a page in my favourite browser:</li>
+</ul>
 <figure>
 <img src="images/InTheBrowser.webp"
 alt="The new tutorial as it appears in a browser" />
 <figcaption aria-hidden="true">The new tutorial as it appears in a
 browser</figcaption>
 </figure>
+<p>If you click on the green GitHub repository link at the bottom of the
+menu, you will be taken to your new remote repository page. All the
+links are working.</p>
 <details class="note" open>
 <summary>
 Why 99-Intro.md?
 </summary>
+<p>The new <code>Using-CSS-Counters</code> directory contains a Markdown
+file at <code>docs/md/99-Intro.md</code>. This is what has been
+converted into the HTML file at <code>docs/index.html</code>, which is
+what is now displaying in your browser.</p>
 <p>Pandoc will treat all the files with an <code>.md</code> extension
-inside the <code>doc/md/</code> folder in alphabetical order. To ensure
-that they are treated in the right order, I recommend that you use
-zero-padded names like <code>01-Getting-Started.md</code>,
+inside the <code>doc/md/</code> folder in alphabetical order.</p>
+<p>To ensure that they are treated in the right order, I recommend that
+you use zero-padded names like <code>01-Getting-Started.md</code>,
 <code>02-Test-Early-Test-Often.md</code>.</p>
 <p>If you don’t use zero-padding, then
 <code>11-Advanced-Techniques.md</code> will be treated before
 <code>2-Test-Early-Test-Often.md</code>, because <code>11</code> comes
 <em>alphabetically</em> before <code>2</code>.</p>
-<p>However, the CSS used to create a separate “page” for each Markdown
-file will automatically show the <em>last</em> section when you first
-open the tutorial. (I’ll explain this in detail in section <em>5.
-Snippets and Sections</em>.) For this reason, the <em>first</em>
-Markdown page must have the <em>highest</em> number.</p>
+<p>However, the CSS that HTM-Elves uses to create a separate “page” for
+each Markdown file will automatically show the <em>last</em> section
+when you first open the tutorial. (I’ll explain this in detail in
+section <a href="#target-or-last-child">19. Target or Last Child?</a>.)
+For this reason, the <em>first</em> Markdown page must have the
+<em>highest</em> number.</p>
 So, by default, the first page is named <code>99-Intro.md</code>.
 </details>
+<h2 id="watching-the-html-page-update-live">Watching the HTML page
+update live</h2>
+<p>The browser current shows a static page, just to confirm that your
+new tutorial has been created. If you make changes to the files in
+<code>docs/md/</code>, this view will not update automatically. You can
+close the page, and use a better way to observe your changes live.</p>
+<ol type="1">
+<li>In the Terminal, <code>cd</code> into the
+<code>Using-CSS-Counters</code> folder</li>
+<li>Run the command <code>npm run watch</code>, so that Watchman will
+trigger Pandoc each time a file in <code>docs/md/</code> changes</li>
+<li>In VS Code’s Explorer panel, locate
+<code>Using-CSS-Counters/docs/index.html</code></li>
+<li>Right-click on this file and select
+<code>Open With Live Server</code> from the drop-down menu.</li>
+</ol>
+<p>Any changes you make to the files in <code>docs/md/</code> will now
+appear in real time in your browser. See <a
+href="https://htm-elves.github.io/Getting-Started/#live-reload">Live
+Reload with Live Server and Watchman</a> in the Getting Started tutorial
+for details.</p>
 <details class="pivot" open>
 <summary>
-Summary
+Smart linking
 </summary>
-<p>The new <code>The-Basics</code> directory contains a Markdown file at
-<code>docs/md/99-Intro.md</code>. This is what has been converted into
-the HTML file at <code>docs/index.html</code>, which is what is now
-displaying in your browser.</p>
-<p>The <code>docs/md/99-Intro.md</code> starts with a <a
-href="https://en.wikipedia.org/wiki/YAML">YAML</a> block which defines
-some variables which Pandoc uses to create the page title, its header
-and sub-header, a publication date in the top right corner, and links to
-a GitHub repository that you have not yet created.</p>
-<p>It also contains some Markdown text which appears in the main part of
-the page.</p>
-<p>Before dealing with either of these topics in depth, I’ll show you
-how to make any changes you make to your Markdown files update live in
-your browser.</p>
+<p>The <code>npm run new</code> command added a <a
+href="https://en.wikipedia.org/wiki/YAML">YAML</a> block at the start of
+the <code>99-Intro.md</code> file, which tells the
+<code>index.html</code> what headers, subheaders and links to use. This
+is how the link to the GitHub repository is defined.</p>
+<p>The next section explains how this YAML block works, and how to
+customize it.</p>
 </details>
 </section>
-<section id="live-reload" aria-labelledby="live-reload" data-item="3. Live Reload">
-<h2>
-<a href="#live-server">Live Reload with Live Server and Watchman</a>
-</h2>
-<p>VS Code Marketplace provides a vast collection of free extensions for
-VS Code. One of these is <a
-href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live
-Server</a>, by Ritwick Dey. Live Server is a local development server
-with live reload feature. When you change contents of an HTML page
-served by Live Server, your browser automatically reloads the modified
-HTML page.</p>
-<p>To install Live Server:</p>
-<ol type="1">
-<li>Choose the menu item View &gt; Extensions, or click on the
-Extensions icon in the Activity Bar, as shown in Figure 6 below.</li>
-<li>Start typing <code>Live Server</code> in the Search Bar at the top
-of the Extensions panel</li>
-<li>Click on Live Server by Ritwick Dey</li>
-<li>Click on the blue Install button.</li>
-</ol>
-<figure>
-<img src="images/InstallLiveServer.webp" alt="Install Live Server" />
-<figcaption aria-hidden="true">Install Live Server</figcaption>
-</figure>
-<details class="alert" open>
-<summary>
-The right installations
-</summary>
-<p>There is another extension with the name “Live Server (Five Server)”,
-by Yannick. It has a very similar logo, but this is not the extension
-that I recommend.</p>
-<p><strong>Be sure to select Live Server by Ritwick Dey.</strong></p>
-<p><strong>You must also have <a
-href="https://facebook.github.io/watchman/">Meta’s open source Watchman
-service</a> installed before you continue.</strong></p>
-</details>
-<h2 id="using-live-server-with-watchman">Using Live Server with
-Watchman</h2>
-<p>If you modify the file at <code>docs/md/99-intro.md</code> now,
-nothing will change in your browser. You need to start the Watchman
-service, to trigger Pandoc when any Markdown files change, and you need
-to serve <code>docs/index.html</code> with Live Server, so that the
-browser will reload the page each time Pandoc updates
-<code>docs/index.html</code>.</p>
-<p>To do this:</p>
-<ol type="1">
-<li>Open a Terminal window on the <code>The-Basics</code> directory (or
-whatever directory you have created for your new tutorial).</li>
-<li>Run the command <code>npm run watch</code></li>
-<li>In the Explorer pane, Right-Click on the file at
-<code>The-Basics/docs/index.html</code></li>
-<li>In the contextual menu that opens, choose Open With Live Server</li>
-</ol>
-<figure>
-<img src="images/WatchLive.webp"
-alt="Making the browser update live as you edit the Markdown files" />
-<figcaption aria-hidden="true">Making the browser update live as you
-edit the Markdown files</figcaption>
-</figure>
-<p>A new tab should open in your favourite browser, with a live version
-of your tutorial. If you now edit <code>docs/md/99-intro.md</code>, you
-should see the changes immediately in your browser.</p>
-<figure>
-<img src="images/LiveUpdate.webp"
-alt="As you edit the Markdown files, the browser reloads index.html" />
-<figcaption aria-hidden="true">As you edit the Markdown files, the
-browser reloads index.html</figcaption>
-</figure>
-<details class="pivot" open>
-<summary>
-Side by Side
-</summary>
-<p>Pandoc has some specific opinions about where blank lines are
-required. If you don’t respect these opinions, Pandoc might not format
-your pages the way you expect. Also, the captions for images are
-numbered dynamically, and sometimes you may want to refer to a
-particular image by its number.</p>
-<p>For these reasons, I like to work with the live browser preview open
-alongside the Markdown page that I am editing (as shown in Figure 8
-above).</p>
-<p>You’ll see in the next steps how to edit the settings for the title,
-headers and links, and also how to format the text itself.</p>
-</details>
-</section>
-<!-- YAML -->
-<section id="yaml" aria-labelledby="yaml" data-item="4. The YAML Block">
+<section id="yaml" aria-labelledby="yaml" data-item="The YAML Block">
 <h2>
 <a href="#yaml">The YAML Block</a>
 </h2>
 <p>Pandoc can be used to convert documents between any of about 60
-different file formats. Pandoc not just useful for converting from
+different file formats. Pandoc is not just useful for converting from
 Markdown to HTML. To help with conversion, Pandoc allows you to include
 <a
 href="https://pandoc.org/chunkedhtml-demo/8.10-metadata-blocks.html#extension-yaml_metadata_block">YAML
 meta-data blocks</a> inside any of the source documents to be
 converted.</p>
-<p>When you run <code>npm run new</code>, the HTM-Elves generate a YAML
+<p>When you run <code>npm run new</code>, HTM-Elves generates a YAML
 block at the beginning of the file <code>doc/md/99-Intro.md</code>,
 using the following logic:</p>
-<pre class="language-yaml"><code class="language-yaml">---
-title: &lt;tutorial name&gt;
+<pre class="language-yaml"><code class="language-yaml"><b>---
+title: Using-CSS-Counters </b><i># tutorialrepository name</i><b>
 subtitle: (set subtitle in 99-Intro.md, if required)
-month: &lt;current month and year&gt;
-organization: &lt;name of parent folder&gt;
-repo: &lt;tutorial name&gt;
----</code></pre>
-<p>A YAML block defines a variable name (like <code>repo</code>) and a
-value for that variable (like <code>The-Basics</code>).</p>
+month: December 2024      </b><i># current month, year</i><b>
+organization: MyTutorials </b><i># GitHub Organization name</i><b>
+repo: Using-CSS-Counters  </b><i># tutorial repository name</i><b>
+---</b></code></pre>
+<p>Each line in a YAML block defines a variable name (like
+<code>repo</code>) and a value for that variable (like
+<code>Using-CSS-Counters</code>), separated by a colon
+<code>:</code>.</p>
+<h2 id="an-html-template">An HTML template</h2>
+<p>When Pandoc converts your Markdown files to HTML, it does not
+automatically add any HTML boilerplate, such as
+<code>&lt;!DOCTYPE html&gt;</code>, a <code>&lt;head&gt;</code> element,
+and a <code>&lt;body&gt;</code> element. However, if you tell it where
+to find a <em>template</em> file, it will use that to wrap the converted
+Markdown.</p>
+<p>The <code>"pandoc"</code> script in the <code>package.json</code>
+file tells Pandoc to use the file at
+<code>MyTutorials.github.io/public/template.html</code>. (There’s a
+symbolic link called <code>public</code> in the tutorial directory that
+points to the <code>MyTutorials.github.io/public/</code> folder, so you
+can move your parent folder around to a different place without breaking
+anything.)</p>
+<pre class="language-json wrap"><code class="language-json wrap"><i>{
+  "scripts": {
+    "pandoc": "pandoc -o docs/index.html --filter public/filter.js </i><b>--template=public/template.html</b><i> docs/md/*.md",</i></code></pre>
+<pre class="skip"><code class="skip">// line skipped //</code></pre>
+<pre class="language-json wrap"><code class="language-json wrap">  <i>}
+}</i></code></pre>
+<h2 id="the-template.html-file">The <code>template.html</code> file</h2>
 <p>The file at <code>MyTutorials.github.io/public/template.html</code>,
-contains a template that is used to wrap your converted Markdown files
-in. It starts like this:</p>
+starts like this:</p>
 <pre class="language-html line-numbers"><code class="language-html line-numbers"><i>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -253,8 +225,8 @@ content="width=device-width, initial-scale=1.0"
       &lt;h4&gt;</i><b>$month$</b><i>&lt;/h4&gt;
     &lt;/header&gt;
 
-</i><b>$body$</b>
-&lt;!-- Many lines skipped --&gt;</code></pre>
+</i><b>$body$</b></code></pre>
+<pre class="skip"><code class="skip">&lt;!-- Many lines skipped --&gt;</code></pre>
 <p>Notice the entries for <code>$title$</code>, <code>$subtitle$</code>,
 <code>$month$</code> and <code>$body$</code>. Near the end of the file
 you will see more entries for <code>$organization$</code> and
@@ -272,8 +244,8 @@ you will see more entries for <code>$organization$</code> and
     &lt;span&gt;GitHub repository&lt;/span&gt;
   &lt;/a&gt;
 &lt;/div&gt;</i></code></pre>
-<p>Pandoc will replace <code>$body$</code> with the result of the
-conversion of all the Markdown files. For the other entries in the
+<p>Pandoc will replace the <code>$body$</code> entry with the result of
+the conversion of all the Markdown files. For the other entries in the
 <code>$double_dollar$</code> format, Pandoc will replace the entry with
 the value for that entry defined in the YAML block. So, for example,
 …</p>
@@ -288,10 +260,31 @@ become…</p>
 </summary>
 <p>You should <strong>leave the values for <code>organization</code> and
 <code>repo</code> exactly as they are</strong>. If you change these,
-then the links to the GitHub repo for your tutorial (which you haven’t
-created yet) will break.</p>
+then the links to the GitHub repo for your tutorial will break.</p>
 <p>You are free to change the values for <code>title</code>,
-<code>subtitle</code> and <code>month</code>, as you wish.</p>
+<code>subtitle</code> and <code>month</code>, as you wish. These
+determine what appears in the <code>&lt;header&gt;</code> element.</p>
+</details>
+<details class="warn" open>
+<summary>
+YAML, <code>---</code> and horizontal rules
+</summary>
+<p>A YAML block starts and ends with three dashes: <code>---</code>.
+This conflicts with standard Markdown, where three or more dashes
+(preceded and followed by blank lines) indicate a <em>horizontal
+rule</em> (<code>&lt;hr&gt;</code> element), which looks like this:</p>
+<hr />
+<p>If Pandoc does not find YAML-formatted data after a line with three
+dashes, <strong>it will exit with an error</strong>. In other words, in
+a Markdown document that will be treated by Pandoc, <strong>you cannot
+use three dashes to create a horizontal rule</strong>. Three dashes
+should be reserved for indicating the start and end of a YAML block.</p>
+<hr />
+<p>Fortunately, there are <a
+href="https://www.markdownguide.org/basic-syntax/#horizontal-rules">other
+ways to create a horizontal rule</a> in Markdown. You can use three or
+more asterisks <code>***</code> or three or more underlines
+<code>___</code>, as I have done above.</p>
 </details>
 <details class="pivot" open>
 <summary>
@@ -302,499 +295,1652 @@ it is safest to use only one, and to place it in the last Markdown file
 to be treated. <code>docs/md/99-Intro.md</code> is thus an excellent
 place to store the variables that will be used by the
 <code>template.html</code> file.</p>
-<p>In the next section, you’ll see how to create a different “page” for
-each Markdown file.</p>
+<p>So, now that the YAML block has been clarified, you can start writing
+your tutorial. At least, I will start writing mine, and you can copy or
+write your own text as you choose.</p>
 </details>
 </section>
-<!-- Section Snippets -->
-<section id="section-snippets" aria-labelledby="section-snippets" data-item="5. Sections and Snippets">
+<section id="framing-the-problem" aria-labelledby="framing-the-problem" data-item="Framing The Problem">
 <h2>
-<a href="#section-snippets">Sections and Snippets</a>
+<a href="#framing-the-problem">Framing The Problem</a>
 </h2>
-<p>If you look at
-<code>MyTutorials/The-Basics/docs/md/99-Intro.md</code>, you’ll see the
-following lines just after the YAML block:</p>
-<pre class="language-md line-numbers" data-start="8"><code class="language-md line-numbers">&lt;section
+<p>To start with, I don’t like the boilerplate that the HTM-Elves have
+given me for the default <code>.md</code> page. This is what I have, but
+it’s not what I want:</p>
+<pre class="language-md wrap"><code class="language-md wrap">---
+title: Using-CSS-Counters
+subtitle: (set subtitle in 99-Intro.md, if required)
+month: December 2024
+organization: MyTutorials
+repo: Using-CSS-Counters
+---
+&lt;section
   id="intro"
   aria-labelledby="intro"
   data-item="Introduction"
 &gt;
   &lt;h2&gt;&lt;a href="#intro"&gt;Introduction&lt;/a&gt;&lt;/h2&gt;
-</code></pre>
-<pre class="skip"><code class="skip">&lt;!-- Some lines skipped --&gt;</code></pre>
-<pre class="language-md line-numbers" data-start="19"><code class="language-md line-numbers">&lt;/section&gt;</code></pre>
-<p><strong><em>“Wait a minute!”</em></strong> I hear you say.
-<strong><em>“This looks like HTML, but I thought that the whole point of
-this HTM-Elves workflow was to avoid writing any
-HTML!”</em></strong></p>
-<p>You are right. You won’t be <em>writing</em> any HTML, but you will
-be <em>using</em> HTML, when standard Markdown needs a little help. And
-Markdown needs help in creating container elements, sections.</p>
-<h2 id="a-section-for-each-file">A section for each file</h2>
-<p>I have three opinions about writing tutorials:</p>
-<ol type="1">
-<li>I like to create a separate Markdown file for each section.</li>
-<li>I like my tutorial web pages to be divided into separate “pages”,
-one for each section, following my file structure.</li>
-</ol>
-<p>However, standard Markdown does not provide a convention for creating
-container blocks like <code>&lt;div&gt;</code> or
-<code>&lt;section&gt;</code>. (Pandoc <em>does</em> recognize an
-extended set of Markdown rules which cover this, but Pandoc has quite a
-steep learning curve.)</p>
-<p>Fortunately, Markdown, by design, understands all HTML tags.
-Unfortunately, Standard Markdown considers that anything inside an HTML
-tag should be formatted as HTML, so it treats Markdown inside an HTML
-tag as plain text. Pandoc to the rescue! Pandoc treats any standard
-Markdown <em>inside</em> an HTML tag as Markdown that it can convert to
-HTML.</p>
-<p>I can therefore start each page with an HTML block like the one you
-see above, and use CSS rules to show only one
-<code>&lt;section&gt;</code> at a time, to impose my second opinion.</p>
-<details class="note" open>
-<summary>
-Fragments and targets
-</summary>
-<p>When you click on an item in the menu, or on one of the buttons in
-the footer, the link you activated sets the <em>fragment</em> in the URL
-address bar. For example, for this page the URL is in the address bar
-has the fragment <code>#section-snippets</code>:</p>
-<pre class="language-html wrap"><code class="language-html wrap"><i>https://htm-elves.github.io/Writing-Your-Own-Tutorials/</i><b>#section-snippets</b></code></pre>
-<p>The CSS pseudo-class <code>:target</code> matches any element whose
-<code>id</code> is the same as the <code>fragment</code>. My CSS hides
-all <code>&lt;section&gt;</code> elements which do not have the same
-<code>id</code> as the <code>fragment</code>, and shows only the one
-that does.</p>
-<p>Actually, it’s slightly more complicated than that (which is why the
-first Markdown file has the number <code>99</code>) but I’ll explain in
-section <a href="#target-or-last-child">14. Target or Last
-Child</a>.</p>
-</details>
-<h2 id="using-vs-code-snippets">Using VS Code snippets</h2>
-<p>I said that I have three opinions about writing tutorials. Here’s the
-third:</p>
-<ol start="3" type="1">
-<li>I like to type as little as possible.</li>
-</ol>
-<p>Instead of typing out a chunk of HTML code each time I create a new
-Markdown file, I use a <a
-href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VS
-Code Snippet</a>. Snippets are templates that allow you to insert
-predictable chunks of text, and customize them quickly depending on the
-context.</p>
-<p>When I create a new file, I give the file a name like
-<code>22.5-Ducks_on_the_water.md</code>, and then I type
-<code>sss</code> into the new empty file. This triggers a Markdown
-snippet that I have created, which generates an HTML block for me, as
-shown in the code listing below:</p>
-<pre class="language-html"><code class="language-html">&lt;!-- 22. Ducks On The Water --&gt;
-&lt;section
-    id="22. Ducks On The Water"
-    aria-labelledby="22. Ducks On The Water"
-    data-item="22. Ducks On The Water"
-&gt;
-    &lt;h2&gt;&lt;a href="#22. Ducks On The Water"&gt;22. Ducks On The Water&lt;/a&gt;&lt;/h2&gt;
-    
+
+To create your own content, edit the file at `docs/md/99-Intro.md` and add more `.md` files in the `docs/md/` folder.
+
+See [Writing Your Own Tutorials](https://htm-elves.github.io/Writing-Your-Own-Tutorials/) for tips and shortcuts.
 
 &lt;/section&gt;</code></pre>
-<p>This is not exactly what I want. However, the snippet contains a
-number of <em>tabstops</em>. Each time I press the Tab key, the snippet
-engine selects a different chunk of the snippet text, and allows me to
-edit it. Even better, the snippet is designed to <em>transform</em> the
-text at each tabstop, in different ways.</p>
-<p>Without editing the inserted snippet at all, I can simply press the
-Tab key 5 times, and it changes the text at each tabstop for me, and
-then places the cursor in where you see the <code>|</code> character,
-ready for me to add content to the page.</p>
-<pre class="language-html"><code class="language-html">&lt;!-- 22. Ducks On The Water --&gt;
+<h2 id="renaming-the-default-.md-file">Renaming the default
+<code>.md</code> file</h2>
+<p>I’m going to write a very short tutorial, so an <em>Introduction</em>
+is overkill. I prefer to title my first section “The Problem”. For
+consistency, I rename the file from <code>99-Intro.md</code> to
+<code>99-The-Problem.md</code>.</p>
+<h2 id="fixing-the-title-and-subtitle">Fixing the title and
+subtitle</h2>
+<p>Next, I remove the dashes from the title in the YAML section, and
+give my tutorial a better subtitle.</p>
+<pre class="language-md line-numbers"><code class="language-md line-numbers">---
+<i>title: </i><b>Using CSS Counters</b><i>
+subtitle: </i><b>Numbering elements not in an ordered list</b><i>
+month: December 2024
+organization: MyTutorials
+repo: Using-CSS-Counters
+---</i></code></pre>
+<h2 id="generating-a-section-block-with-a-markdown-snippets">Generating
+a <code>&lt;section&gt;</code> block with a Markdown snippets</h2>
+<p>As you saw in <a
+href="https://htm-elves.github.io/Getting-Started/#testing-snippets">the
+Getting Started tutorial</a>, you can use a Markdown snippet to generate
+a <code>&lt;section&gt;</code> block for an <code>.md</code> file with
+just a few keystrokes.</p>
+<p>I select all the text after the YAML block and delete it. In its
+place, I:</p>
+<ol type="1">
+<li>Type <code>sss</code>, the <em>prefix</em> for <a
+href="https://htm-elves.github.io/Getting-Started/#markdown-snippets">a
+Markdown snippet that you should already have installed</a>.</li>
+<li>Press the Tab key.</li>
+</ol>
+<p>The following raw snippet is added to my file.</p>
+<pre class="language-md line-numbers"><code class="language-md line-numbers"><i>---
+title: Using CSS Counters
+subtitle: Numbering elements not in an ordered list
+month: December 2024
+organization: MyTutorials
+repo: Using-CSS-sel
+---</i>
+&lt;!-- <u>The Problem</u> --&gt;
 &lt;section
-  id="ducks-on-the-water"
-  aria-labelledby="ducks-on-the-water"
-  data-item="22. Ducks On The Water"
+  id="<u>The Problem</u>"
+  aria-labelledby="<u>The Problem</u>"
+  data-item="<u>The Problem</u>"
 &gt;
-  &lt;h2&gt;&lt;a href="#ducks-on-the-water"&gt;Ducks On The Water&lt;/a&gt;&lt;/h2&gt;
+  &lt;h2&gt;&lt;a href="#<u>The Problem</u>"&gt;<u>The Problem</u>&lt;/a&gt;&lt;/h2&gt;
+  
+
+&lt;/section&gt;</code></pre>
+<p>It has read in the file name, stripped off the leading numbers and
+the final <code>.md</code> extension, and converted all the dashes
+(<code>-</code>) to spaces. It has also selected all occurrences of the
+transformed file name, so I could edit all these occurrences at once if
+I wanted to. But I don’t want to. Instead:</p>
+<ol start="3" type="1">
+<li>I press the Tab key four more times.</li>
+</ol>
+<p>This sanitizes the values for <code>id</code>,
+<code>aria-labelledby</code> and <code>href</code>, leaves the other
+values as they are, and places the text insertion cursor just under the
+<code>&lt;h2&gt;</code> tag, ready for me to start typing the content
+that I want.</p>
+<pre class="language-md line-numbers"><code class="language-md line-numbers"><i>&lt;!-- The Problem --&gt;
+&lt;section
+  id="</i><b>the-problem</b><i>"
+  aria-labelledby="</i><b>the-problem</b><i>"
+  data-item="The Problem"
+&gt;
+  &lt;h2&gt;&lt;a href="#</i><b>the-problem</b><i>"&gt;The Problem&lt;/a&gt;&lt;/h2&gt;
   |
 
-&lt;/section&gt;</code></pre>
-<p>The numbered <code>data-item</code> is used in the menu. The
-<code>id</code> ensures that this section is displayed when the fragment
-in the address bar matches it. Wrapping the header text in a link means
-that it is easy for you to copy the link to the current page, if you
-want to share it with someone.</p>
+&lt;/section&gt;</i></code></pre>
+<p>In my browser, the page has reloaded:</p>
+<figure>
+<img src="images/TheProblem.webp"
+alt="Live Server reloads the updated index.html page" />
+<figcaption aria-hidden="true">Live Server reloads the updated
+index.html page</figcaption>
+</figure>
 <details class="pivot" open>
 <summary>
-Time-saving with snippets
+Ready to write some content
 </summary>
-<p>By default, VS Code does not provide any Markdown snippets, and it
-has disactivated the use of snippets in Markdown files.</p>
-<p>In the next section, you’ll see how to activate snippets, and I’ll
-give you a collection to get started with.</p>
+<p>You should only have one YAML section, in the highest-numbered
+<code>.md</code> file. Each <code>.md</code> should contain a
+<code>&lt;section&gt;</code> block, and you can use the <code>sss</code>
+Markdown snippet to generate this from the name of the file.</p>
+<p>In the next sections, you’ll see the different ways that I have used
+standard or customized Markdown to create the mini tutorial.</p>
 </details>
 </section>
-<!-- 6. Activating Markdown Snippets -->
-<section id="activating-markdown-snippets" aria-labelledby="activating-markdown-snippets" data-item="6. Activating Snippets">
+<section id="markdown-links" aria-labelledby="markdown-links" data-item="Markdown Links">
 <h2>
-<a href="#activating-markdown-snippets">Activating Markdown Snippets</a>
+<a href="#markdown-links">Markdown Links</a>
 </h2>
-<p>If you create a new file in VS Code, save it with the Markdown
-extension <code>.md</code>, and then type <code>sss</code> into it,
-nothing special will happen.</p>
-<p>First you need two things:</p>
-<ol type="1">
-<li>To activate <code>quicksuggestions</code> for Markdown files</li>
-<li>A file named <code>markdown.json</code> with some useful
-snippets.</li>
-</ol>
-<h2 id="activate-quicksuggestions-for-markdown-files">Activate
-<code>quicksuggestions</code> for Markdown files</h2>
-<p>To activate <code>quicksuggestions</code> for Markdown files, you
-need to:</p>
-<ol type="1">
-<li>Open the VS Code’s Command Palette. The lazy way is to use the menu
-item <code>View &gt; Command Palette</code>, but that means that you
-have to move your hands away from your keyboard, which wastes time.
-Instead, use the keyboard shortcut <code>Ctrl-Shift-P</code>, or simply
-<code>F1</code>.</li>
-<li>Start typing some part of “Preferences: Configure Language Specific
-Settings”. (I find that “Lang Set” is enough to bring the appropriate
-command to the top of the list.)</li>
-</ol>
+<p>If you look at <a
+href="https://htm-elves.github.io/Using-CSS-Counters/"
+target="htm-elves">the completed mini tutorial</a>, you’ll see that the
+first sentence contains a link to the page <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters">Using
+CSS counters</a> on Mozilla’s MDN Web Docs site.</p>
+<p>Here’s how this sentence looks in Markdown:</p>
+<pre class="language-md wrap"><code class="language-md wrap">In this tutorial, I will show you how to use [CSS counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) to number the link elements in a navigation menu.</code></pre>
+<p>Notice how a <a
+href="https://www.markdownguide.org/basic-syntax/#links"
+title="title shows on hover" target="_blank">link is created</a> with
+the format:</p>
+<pre class="language-md wrap"><code class="language-md wrap">[Anchor Text](URL)</code></pre>
+<p>If you want to be fancy, you can add attributes for the link, by
+adding an attribute block with the structure
+<code>{attribute="value"}</code> immediately after the
+<code>(URL)</code> section, like this:</p>
+<pre class="language-md wrap"><code class="language-md wrap">[Anchor Text](URL){title="title shows on hover" target="_blank"}</code></pre>
+<p>By way of illustration, here’s the <a
+href="https://www.markdownguide.org/basic-syntax/#links"
+title="title shows on hover" target="_blank">link to markdownguide.org
+decorated in just this way</a>. Hover your mouse over it to see the
+title displayed after a few seconds. If you follow the link, it will
+open in a new tab.</p>
+</section>
+<section id="inline-code" aria-labelledby="inline-code" data-item="Inline Code">
+<h2>
+<a href="#inline-code">Inline Code</a>
+</h2>
+<p>The next sentence in <a
+href="https://htm-elves.github.io/Using-CSS-Counters/"
+target="htm-elves">the completed mini tutorial</a> creates an inline
+<code>&lt;code&gt;</code> element around the <code>&lt;ol&gt;</code>
+tag. This is done using backticks (<code>`</code>), like this:</p>
+<pre class="language-md wrap"><code class="language-md wrap">Imagine that you have an `&lt;ol&gt;` element with the following structure:</code></pre>
+<details class="tip" open>
+<summary>
+Showing backticks in text
+</summary>
+<p>Sometimes you might want to show a backtick as text, rather than
+using it to generate a <code>&lt;code&gt;</code> element. To do this,
+you need to place <em>double</em> backticks before and after the single
+backtick that you want to show, with spaces around the single backtick,
+like this: <code>`` ` ``</code></p>
+<p>To show the double backticks with the single backtick inside it in
+the last line, I had to enclose them all in <em>triple</em> backticks,
+like this: <code>``` `` ` `` ```</code>. And to show <em>that</em>
+string of backticks, I had to enclose all of them in quadruple
+backticks. And so on. You get the idea.</p>
+</details>
+</section>
+<section id="code-listings" aria-labelledby="code-listings" data-item="Intro to Code Listings">
+<h2>
+<a href="#code-listings">Introduction to Code Listings</a>
+</h2>
+<p>The next block in <a
+href="https://htm-elves.github.io/Using-CSS-Counters/"
+target="htm-elves">the completed mini tutorial</a> is an HTML code
+listing with syntax highlighting:</p>
+<pre class="language-html"><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;&lt;a href="#beginning"&gt;Beginning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#middle"&gt;Middle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#end"&gt;End&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+<p>Code listing with syntax highlighting is handled by <a
+href="https://prismjs.com/">Prism</a>. Prism is loaded by the
+<code>MyTutorials.github.io/public/template.html</code> file:</p>
+<pre class="language-html line-numbers"><code class="language-html line-numbers"><i>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+&gt;
+&lt;title&gt;$title$&lt;/title&gt;
+&lt;link rel="stylesheet" href="../public/styles.css"&gt;
+&lt;link rel="stylesheet" href="../public/media-queries.css"&gt;
+</i><b>&lt;link rel="stylesheet" href="../public/prism/prism.css"&gt;
+
+&lt;script defer src="../public/prism/prism.js"&gt;&lt;/script&gt;</b><i>
+&lt;script defer src="../public/storage.js"&gt;&lt;/script&gt;
+&lt;script defer src="../public/script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</i></code></pre>
+<p>Prism consists of a CSS file and a JavaScript file. The JavaScript
+code scans the <code>index.html</code> created by Pandoc for lines
+wrapped in a block like this:</p>
+<pre class="language-html wrap"><code class="language-html wrap">&lt;pre class="language-xxx"&gt;&lt;code class="language-xxx"&gt;...&lt;/code&gt;&lt;/pre&gt;</code></pre>
+<p>For example, the numbered code listing above appears something like
+this in the <code>index.html</code> file</p>
+<pre class="language-html line-numbers" data-start="498"><code class="language-html line-numbers">&lt;pre class="language-html line-numbers"&gt;
+  &lt;code class="language-html line-numbers"&gt;
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;</code></pre>
+<pre class="skip"><code class="skip">&lt;!-- 7 lines skipped --&gt;</code></pre>
+<pre class="language-html line-numbers" data-start="509"><code class="language-html line-numbers">    &lt;link rel="stylesheet" href="../public/prism/prism.css"&gt;
+
+    &lt;script defer src="../public/prism/prism.js"&gt;&lt;/script&gt;</code></pre>
+<pre class="skip"><code class="skip">&lt;!-- 2 lines skipped --&gt;</code></pre>
+<pre class="language-html line-numbers" data-start="514"><code class="language-html line-numbers">&lt;/code&gt;&lt;/pre&gt;</code></pre>
+<p>When the <code>prism.js</code> code finds a block like this, it
+restructures it, creating a <code>&lt;span&gt;</code> for each chunk
+that needs to be in a different color, giving each
+<code>&lt;span&gt;</code> the appropriate class. The CSS in
+<code>prism.css</code> then applies the appropriate colors according to
+the class.</p>
+<p>This is all done automatically for you.</p>
+<p>All you have to do is tell Pandoc (and thus Prism) what language the
+code listing is in, so that it can provide the correct syntax
+highlighting.</p>
+<p>Markdown allows you to create language-specific code blocks using
+triple backticks on the preceding and following line, like this:</p>
+<pre class="language-md wrap"><code class="language-md wrap">```html
+&lt;!DOCTYPE html&gt;
+```</code></pre>
+<p>Here’s what that would look like when treated out of the box by
+Pandoc and Prism:</p>
+<pre class="language-html line-numbers"><code class="language-html line-numbers">&lt;!DOCTYPE html&gt;</code></pre>
+<h2 id="try-it-yourself">Try it yourself</h2>
+<p>To test this for yourself, add an HTML code block, to your
+<code>99-The-Problem.md</code> file, as shown in the code listing
+below:</p>
+<pre class="language-md wrap"><code class="language-md wrap"><i>---
+title: Using CSS Counters
+subtitle: Numbering elements not in an ordered list
+month: December 2024
+organization: MyTutorials
+repo: Using-CSS-Counters
+---
+&lt;!-- The Problem --&gt;
+&lt;section
+  id="the-problem"
+  aria-labelledby="the-problem"
+  data-item="The Problem"
+&gt;
+  &lt;h2&gt;&lt;a href="#the-problem"&gt;The Problem&lt;/a&gt;&lt;/h2&gt;
+  
+  In this tutorial, I will show you how to use [CSS counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) to number the link elements in a navigation menu.
+
+  Imagine that you have an `&lt;ol&gt;` element with the following structure:
+</i>
+<b>```html
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href="#beginning"&gt;Beginning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#middle"&gt;Middle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#end"&gt;End&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+```</b><i>
+
+&lt;/section&gt;</i></code></pre>
+<p>Here’s the result that you should see in your browser:</p>
 <figure>
-<img src="images/LanguageSettings.webp"
-alt="Configure Language Specific Settings" />
-<figcaption aria-hidden="true">Configure Language Specific
-Settings</figcaption>
+<img src="images/SyntaxHighlighting.webp"
+alt="Default HTML syntax highlighting with line numbers" />
+<figcaption aria-hidden="true">Default HTML syntax highlighting with
+line numbers</figcaption>
 </figure>
+<p>Notice how the code listing appears with line numbers. That’s neat,
+but it might not be what you want.</p>
+<details class="pivot" open>
+<summary>
+Prism in default mode
+</summary>
+<p>By default, Prism will add line numbers to any code listing. The
+syntax highlighting will have a uniform brightness. However, as you have
+seen from the code listings in this tutorial, there are more advanced
+tricks that you can use to draw your reader’s attention to particular
+sections of the code listing.</p>
+<p>The next section describes these tricks.</p>
+</details>
+</section>
+<section id="advanced-code-listing-tricks" aria-labelledby="advanced-code-listing-tricks" data-item="Advanced Code Tricks">
+<h2>
+<a href="#advanced-code-listing-tricks">Advanced Code Listing Tricks</a>
+</h2>
+<p>Here’s how you can remove the line numbering for the HTML code block.
+In your file
+<code>MyTutorials/Using-CSS-Counters/docs/md/99-The-Problem.md</code>,
+add <code>-#</code> (which you can read as “minus number”) after the
+<code>html</code> language indicator:</p>
+<pre class="language-md line-numbers" data-start="19"><code class="language-md line-numbers"><i>```</i><b>html-#</b><i>
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href="#beginning"&gt;Beginning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#middle"&gt;Middle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#end"&gt;End&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</i>
+```</code></pre>
+<p>Here’s how your code listing should now appear in the browser:</p>
+<pre class="language-html"><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;&lt;a href="#beginning"&gt;Beginning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#middle"&gt;Middle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#end"&gt;End&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+<details class="tldr">
+<summary>
+TL;DR – Pandoc filters
+</summary>
+<p>Pandoc reads from a source file and converts the document into its
+own internal format. Before it converts from that internal format to the
+target format, it allows a <em>filter</em> to modify the blocks in the
+internal format. The final conversion to the target format is performed
+on the modified blocks.</p>
+<p>The <code>"pandoc"</code> script in <code>package.json</code> allows
+the file at <code>MyTutorial.github.io/public/filter.js</code> to review
+each block and modify it.</p>
+<pre class="language-json wrap"><code class="language-json wrap"><i>"scripts": {
+    "pandoc": "pandoc -o docs/index.html </i><b>--filter public/filter.js</b><i> --template=public/template.html docs/md/*.md"
+  }</i></code></pre>
+<p>When Pandoc encounters a code block, as designated by a opening and
+closing fence of three backticks with a language indicator, like
+<code>```html</code>, it creates an internal block of type
+<code>CodeBlock</code> and stores the language indicator as its internal
+equivalennt of a <code>class</code>.</p>
+<p>The <code>filter.js</code> file that HTM-Elves uses, inspects the
+<code>class</code> provided by each <code>CodeBlock</code>. It looks for
+classes like:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>html</code></td>
+<td>treat as HTML</td>
+</tr>
+<tr>
+<td><code>html-#</code></td>
+<td>don’t show line-numbering</td>
+</tr>
+<tr>
+<td><code>html-w</code></td>
+<td>wrap the text <em>and</em> don’t show-line numbering</td>
+</tr>
+<tr>
+<td><code>html-#498</code></td>
+<td>start line-numbering at line 498</td>
+</tr>
+<tr>
+<td><code>html-s</code></td>
+<td>show “skipped lines” comment</td>
+</tr>
+</tbody>
+</table>
+<p>When it finds such a class, it:</p>
+<ul>
+<li>Replaces the <code>html</code> class* with
+<code>language-html</code>, which is what Prism expects to see</li>
+<li>Adds other classes, such as <code>line-numbers</code>,
+<code>skip</code> or <code>wrap</code> as required</li>
+<li>Adds a <code>data-start</code> attribute with the number at which to
+start line-numbering, if this is what is requested.</li>
+</ul>
+<p>*<code>html</code> is used as an example here. The filter performs
+the same steps for all language names supported by Prism, such as
+<code>md</code>, <code>js</code> and <code>json</code>.</p>
+<p>‘filter.js’ also scans the body of the CodeBlock for tags such
+as:</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;i&gt;...&lt;/i&gt;</code></td>
+<td>dim (indistinct)</td>
+</tr>
+<tr>
+<td><code>&lt;b&gt;...&lt;/b&gt;</code></td>
+<td>brighten</td>
+</tr>
+<tr>
+<td><code>&lt;u&gt;...&lt;/u&gt;</code></td>
+<td>show as selection</td>
+</tr>
+<tr>
+<td><code>&lt;s&gt;...&lt;/s&gt;</code></td>
+<td>show as deleted (strike-through)</td>
+</tr>
+</tbody>
+</table>
+<p>For any other tags, it converts <code>&lt;</code> to
+<code>&amp;lt;</code> and <code>&gt;</code> to <code>&amp;gt;</code>,
+but it lets the tags above pass through unchanged. These are then used
+in an unorthodox way by
+<code>MyTutorials.github.io/public/styles.css</code> to apply additional
+styling to catch the reader’s eye.</p>
+</details>
+<h2 id="more-htm-elves-shortcuts">More HTM-Elves shortcuts</h2>
+<p>Here are some more shortcuts that HTM-Elves provides. I’ve used
+<code>md</code> (Markdown) as the language example, but they will work
+just as well with all other languages, such as <code>html</code>,
+<code>css</code>, <code>js</code>, <code>json</code>, <code>yaml</code>,
+and <code>bash</code>.</p>
+<pre class="language-md"><code class="language-md">```md
+standard code
+&lt;b&gt;brighter code&lt;/b&gt;
+&lt;i&gt;dimmer code&lt;/i&gt;
+&lt;s&gt;deleted code&lt;/s&gt;
+&lt;u&gt;selected code&lt;/u&gt;
+```
+```md-s
+&lt;!-- skipped lines --&gt;
+```
+```md-#10
+Code that starts at a specific line number
+```
+```md-s
+```
+```md-#
+Code with no line numbering
+```
+```md-s
+```
+```md-w
+Long lines of code that you want to wrap. Unfortunately, Prism will not let you number these lines correctly, so they must remain un-numbered.
+
+md-s blocks with no content just create vertical space with the same background-color
+```</code></pre>
+<h2 id="what-they-look-like-in-the-browser">What they look like in the
+browser</h2>
+<pre class="language-md line-numbers"><code class="language-md line-numbers">standard code
+<b>brighter code</b>
+<i>dimmer code</i>
+<s>deleted code</s>
+<u>selected code</u></code></pre>
+<pre class="skip"><code class="skip">&lt;!-- skipped lines --&gt;</code></pre>
+<pre class="language-md line-numbers" data-start="10"><code class="language-md line-numbers">Code that starts at a specific line number</code></pre>
+<pre class="skip"><code class="skip"></code></pre>
+<pre class="language-md"><code class="language-md">Code with no line numbering</code></pre>
+<pre class="skip"><code class="skip"></code></pre>
+<pre class="language-md wrap"><code class="language-md wrap">Long lines of code that you want to wrap. Unfortunately, Prism will not let you number these lines correctly, so they must remain un-numbered.
+
+md-s blocks with no content just create vertical space with the same background-color</code></pre>
+<h2 id="example">Example</h2>
+<p>Here’s an example from the Solutions page of <a
+href="https://htm-elves.github.io/Using-CSS-Counters/#the-solution"
+target="htm-elves">the mini tutorial</a>:</p>
+<pre class="language-css"><code class="language-css"><i>ol {
+  counter-reset: item;
+  </i><b>list-style-type: none;</b><i>
+
+  a::before {
+    counter-increment: item;
+    content: counter(item) ". ";
+  }
+}</i></code></pre>
+<p>Here’s the Markdown code used to create it. See the green note below
+for details on how to use Markdown snippets to insert the
+<code>&lt;i&gt;</code> and <code>&lt;b&gt;</code> tags.</p>
+<pre class="language-md"><code class="language-md">```css-#
+&lt;i&gt;ol {
+  counter-reset: item;
+  &lt;/i&gt&lt;b&gt;list-style-type: none;&lt;/b&gt;&lt;i&gt;
+
+  a::before {
+    counter-increment: item;
+    content: counter(item) ". ";
+  }
+}&lt;/i&gt
+```</code></pre>
+<h2 id="markdown-snippets">Markdown snippets</h2>
+<p>When you want to create a code block for a specific language, just
+type the short name of the language (in lowercase) in your
+<code>.md</code> file, then press Tab, and the appropriate code block
+will appear, with the cursor placed in its centre.</p>
+<p>If you want to apply a variant (like <code>html-#</code>) you will
+need to add the variant later. The exception is for <code>bash</code>,
+which will automatically create a block like…</p>
+<pre class="language-md line-numbers"><code class="language-md line-numbers">```bash-w
+|
+```</code></pre>
+<p>… because there is no line-numbering in the Terminal, and this allows
+long lines to wrap.</p>
+<h2 id="wrapping-existing-code-in-a-code-block">Wrapping existing code
+in a code block</h2>
+<p>If you have already written the code, and later want to wrap it in a
+code block, simply select the code, then type the snippet prefix and
+press Tab. Alarmingly, your code will be deleted as you type the prefix,
+but when you press Tab, it will be restored.</p>
+<p>Example: suppose that you have written this chunk of CSS, but have
+forgotten to create a code block for it:</p>
+<pre class="language-md"><code class="language-md">ol {
+  counter-reset: item 0;
+
+  a::before {
+    counter-increment: item 1;
+    content: counter(item) ". ";
+  }
+}</code></pre>
+<p>Simply select it all…</p>
+<pre class="language-md"><code class="language-md"><u>ol {
+  counter-reset: item 0;
+
+  a::before {
+    counter-increment: item 1;
+    content: counter(item) ". ";
+  }
+}</u></code></pre>
+<p>… type <code>css</code> (during which time your actual CSS will
+disappear)…</p>
+<pre class="language-md"><code class="language-md">css</code></pre>
+<p>… then press the Tab key, and your CSS will reappear wrapped in the
+<code>```css ... ```</code> code block:</p>
+<pre class="language-md"><code class="language-md">```css
+ol {
+  counter-reset: item 0;
+
+  a::before {
+    counter-increment: item 1;
+    content: counter(item) ". ";
+  }
+}
+```</code></pre>
+<details class="note" open>
+<summary>
+Quirky use of one-letter tags
+</summary>
+<p>There are also snippets for creating the (quirky)
+<code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;s&gt;</code>
+and <code>&lt;u&gt;</code> tags.</p>
+<ul>
+<li><code>&lt;b</code> : to wrap a selection in a <code>&lt;b&gt;</code>
+element (bright)</li>
+<li><code>&lt;i</code> : to wrap a selection in a <code>&lt;i&gt;</code>
+element (dim)</li>
+<li><code>&lt;s</code> : to wrap a selection in a <code>&lt;s&gt;</code>
+element (strike-through)</li>
+<li><code>&lt;u</code> : to wrap a selection in a <code>&lt;u&gt;</code>
+element (TM_SELECTED_TEXT)</li>
+<li><code>ib</code> : to wrap a selection in a
+<code>&lt;/i&gt;&lt;b&gt;...&lt;/b&gt;&lt;i&gt;</code>, to insert a
+bright element inside a dimmed block of code</li>
+</ul>
+<p>Select the text that you want to wrap with one of these tags, and
+type the appropriate Markdown snippet prefix.</p>
+<p>Perhaps you want to make a whole block of code dimmer, and then
+create a brighter section within that block. For example:</p>
+<pre class="language-md"><code class="language-md">This is code that the reader has already seen.
+This part is new.
+This part is also familiar code.</code></pre>
+<p>You can:</p>
+<ol type="1">
+<li>Select the whole block of code</li>
+</ol>
+<pre class="language-md"><code class="language-md"><u>This is code that the reader has already seen.
+This part is new.
+This part is also familiar code.</u></code></pre>
+<ol start="2" type="1">
+<li>Type <code>&lt;i</code> + Tab, to dim it all</li>
+</ol>
+<pre class="language-md"><code class="language-md"><i>&lt;i&gt;<i>This is code that the reader has already seen.
+This part is new.
+This part is also familiar code.</i>&lt;/i&gt;</i></code></pre>
 <ol start="3" type="1">
-<li>Press Enter. You will see a list of all the languages that VS Code
-can handle. Start typing “Markdown”, then press Enter when Markdown
-appears at the top of the list.</li>
+<li>Select just the new part</li>
 </ol>
-<figure>
-<img src="images/MarkdownSettings.webp" alt="Markdown Settings" />
-<figcaption aria-hidden="true">Markdown Settings</figcaption>
-</figure>
+<pre class="language-md"><code class="language-md"><i>&lt;i&gt;This is code that the reader has already seen.
+<u>This part is new.</u>
+This part is also familiar code.&lt;i&gt;</i></code></pre>
 <ol start="4" type="1">
-<li>In the Search bar, <code>@lang:markdown</code> will already appear.
-Start adding the word <code>quicksuggestions</code>, until the entry
-“Editor: <strong>Quick Suggestions</strong>” appears.</li>
+<li>Type the Markdown prefix <code>ib</code> + Tab to insert a bright
+block in the middle of the dim block</li>
 </ol>
-<figure>
-<img src="images/quickSuggestions.webp"
-alt="Editor: Quick Suggestions" />
-<figcaption aria-hidden="true">Editor: Quick Suggestions</figcaption>
-</figure>
-<ol start="5" type="1">
-<li>For the item “other” click on the Pencil icon, which appears when
-you hover your mouse in the right place, then use the contextual menu to
-select <code>on</code>.</li>
-<li>Click OK.</li>
-</ol>
-<figure>
-<img src="images/ActivateQuickSuggestions.webp" alt="Caption" />
-<figcaption aria-hidden="true">Caption</figcaption>
-</figure>
-<h2 id="install-some-useful-snippets">Install some useful snippets</h2>
-<p>Now you can install some useful snippets in a special file called
-<code>markdown.json</code>. To open this file:</p>
-<ol type="1">
-<li><ol type="1">
-<li>Open the VS Code’s Command Palette (<code>Ctrl-Shift-P</code>, or
-simply <code>F1</code>).</li>
-</ol></li>
-<li>Start typing “snippets”, until the command “Snippets: Configure
-Snippets” is at the top of the list.</li>
-</ol>
-<figure>
-<img src="images/ConfigureSnippets.webp" alt="Caption" />
-<figcaption aria-hidden="true">Caption</figcaption>
-</figure>
-<ol start="3" type="1">
-<li>Press Enter.</li>
-<li>You’ll see a list of all the languages that VS Code can provide
-snippets for. Start typing “Markdown” until <code>markdown.json</code>
-is at the top of the list.</li>
-</ol>
-<figure>
-<img src="images/MarkdownSnippets.webp" alt="Caption" />
-<figcaption aria-hidden="true">Caption</figcaption>
-</figure>
-<ol start="5" type="1">
-<li>Press Enter.</li>
-<li>A file named <code>markdown.json</code> will open. It’s not exactly
-a JSON file, because it supports JavaScript-like comments. It’s probably
-just got comments in it and no snippets.</li>
-<li>Copy the JSON from the code listing below and use this to replace
-the current contents of the file.</li>
-</ol>
-<details class="warn" open>
+<pre class="language-md"><code class="language-md"><i>&lt;i&gt;This is code that the reader has already seen.
+&lt;/i&gt;&lt;b&gt;</i><b>This part is new.</b><i>&lt;/b&gt;&lt;i&gt;
+This part is also familiar code.&lt;i&gt;</i></code></pre>
+<details class="warn">
 <summary>
-Summary
+Warning: HTML code blocks don’t like these quirky tags
 </summary>
-<p>If there are already some Markdown snippets in the file, simply add
-the snippets from the code listing below, rather than replacing
-everything.</p>
+<p>At the time of writing, if you try this with an HTML code block, the
+Markdown snippets described above will fail. Instead, VS Code will think
+that you actually want to replace the selected text with the Markdown
+snippet prefix.</p>
+<p>You might have to use the Undo feature in a hurry, and type in the
+tags by hand.</p>
 </details>
-<p>Here are the Markdown snippets that I use regularly in connection
-with HTM-Elves:</p>
-<pre class="language-json wrap"><code class="language-json wrap">{
-    // Place your snippets for markdown here. Each snippet is
-    // defined under a snippet name and has a prefix, body and
-    // description. The prefix is what is used to trigger the 
-    // snippet and the body will be expanded and inserted. Possible
-    // variables are:
-    // $1, $2 for tab stops, $0 for the final cursor position, and
-    // ${1:label}, ${2:another} for placeholders. Placeholders with
-    // the same ids are connected.
-
-    // For more details, see
-    // https://code.visualstudio.com/docs/editor/userdefinedsnippets
-
-    "numbered section":{
-        "body": [
-            "&lt;!-- ${1:${TM_FILENAME/(^(0*)([0-9]+)([0-9 _.-]*))|(\\..{1,4}$)|('(?:[a-z]|re|ve)(?=(?:[\\s_.-]|$)))|([a-z0-9]+)|([\\s-_.-]+)|(.)/$3${3:+. }$6${7:/capitalize}${8:+ }$9/gi}} --&gt;\n&lt;section\n  id=\"${2:${1/(^[0-9. ]+)|([a-z0-9]+)|([\\s_.-]+)|(.)/${2:/downcase}${3:+-}/gi}}\"\n  aria-labelledby=\"$2\"\n  data-item=\"${3:${1/(^[0-9. ]+)|([\\s_\\.-]+)|('(?:[a-z]|re|ve)(?=(?:[\\s_.-]|$)))|(\\w+)/$1${2:+ }$3${4:/capitalize}/g}}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$2\"&gt;${4:${3/(^[0-9. ]+)|([_\\.-]+)|('(?:[a-z]|re|ve)(?=(?:[\\s_.-]|$)))|(\\w+)/${2:+ }$3${4:/capitalize}/g}}&lt;/a&gt;&lt;/h2&gt;\n  $0\n\n&lt;/section&gt;"
-        ],
-        "prefix": "sss",
-        "description": "id+data-item+header from file name"
-    },
-    // See Open VS Code Issue: #112362
-    // https://github.com/microsoft/vscode/issues/112362#issuecomment-947556633
-    "section": {
-        "prefix": "section",
-        "body": [
-            "&lt;section\n  id=\"${1:section-id}\"\n  aria-labelledby=\"$1\"\n  data-item=\"${2:Title for Menu}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$1\"&gt;${3:$2}&lt;/a&gt;&lt;/h2&gt;\n  $0\n&lt;/section&gt;"
-        ],
-        "description": "Customize id, data-item and header. Add content."
-    },
-    "details": {
-        "prefix": "ddd",
-        "body": [
-            "&lt;details class=\"${1|alert,challenge,env,feedback,note,pivot,question,tip,tldr,warn|}\"${2: open}&gt;\n&lt;summary&gt;${3:Summary}&lt;/summary&gt;\n${4:$TM_SELECTED_TEXT}\n\n&lt;/details&gt;"
-        ],
-        "description": "details element"
-    },
-    "javascript code block": {
-        "prefix": "js",
-        "body": [
-            "```javascript\n$1\n```\n$0"
-        ],
-        "description": "javascript code block"
-    },
-    "json code block": {
-        "prefix": "json",
-        "body": [
-            "```json\n$1\n```\n$0"
-        ],
-        "description": "json code block"
-    },
-    "html code block": {
-        "prefix": "html",
-        "body": [
-            "```html\n$1\n```\n$0"
-        ],
-        "description": "html code block"
-    },
-    "md code block": {
-        "prefix": "md",
-        "body": [
-            "```md\n$1\n```\n$0"
-        ],
-        "description": "markdown code block"
-    },
-    "css code block": {
-        "prefix": "css",
-        "body": [
-            "```css\n$1\n```\n$0"
-        ],
-        "description": "css code block"
-    },
-    "bash code block": {
-        "prefix": "bash",
-        "body": [
-            "```bash-#w\n$1\n```\n$0"
-        ],
-        "description": "bash code block without numbering"
-    },
-    "insert image": {
-        "prefix": "img",
-        "body": [
-            "![${2:Caption}](images${1:/filename})"
-        ],
-        "description": "insert image"
-    }
-}</code></pre>
-<details class="pivot" open>
-<summary>
-Taking time to save time
-</summary>
-<p>It’s taken you several minutes to set up Markdown snippets, and you
-haven’t actually typed any of the content for your tutorial yet. It’s
-not obvious yet that these snippets will save you time. But trust me:
-once you see their power, you will want to create your own snippets for
-all the languages that you work with.</p>
-<p>Check out the official <a
-href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VS
-Code Snippet documentation</a> for more details.</p>
-<p>Next, you’ll see how I use a well-crafted snippet to generate a new
-<code>&lt;section&gt;</code> from each Markdown page I create.</p>
 </details>
 </section>
-<!-- 7. Testing Your Snippets -->
-<section id="testing-your-snippets" aria-labelledby="testing-your-snippets" data-item="7. Testing Your Snippets">
-<h2>
-<a href="#testing-your-snippets">Testing Your Snippets</a>
-</h2>
-<p>Each snippet has a <code>"prefix"</code> entry. For example, this
-snippet…</p>
-<pre class="language-json wrap"><code class="language-json wrap">"section": {
-  "prefix": "section",
-  "body": [
-    "&lt;section\n  id=\"${1:section-id}\"\n aria-labelledby=\"$1\"\n  data-item=\"${2:Title forMenu}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$1\"&gt;${3:$2}&lt;/a&gt;&lt;/h2&gt;\n $0\n&lt;/section&gt;"
-  ],
-  "description": "Customize id, data-item and headAdd content."
-}</code></pre>
-<p>… has the prefix <code>section</code>. If you type the word
-<code>section</code> into a file with the extension <code>.md</code>,
-and press the Tab key, the following text will be inserted into your
-file.</p>
-<pre class="language-md"><code class="language-md">&lt;section
-    id="<s>section-id</s>"
-    aria-labelledby="<s>section-id</s>"
-    data-item="Title for Menu"
-&gt;
-    &lt;h2&gt;&lt;a href="#<s>section-id</s>"&gt;Title for Menu&lt;/a&gt;&lt;/h2&gt;
-    
-&lt;/section&gt;</code></pre>
-<p>Notice that the three occurrences of the words
-<code>section-id</code> are highlighted. Start typing, and the text in
-all three places will change. This is the first <em>tabstop</em>.</p>
-<p>Press the Tab key, and the two occurrences of
-<code>Title for Menu</code> will be highlighted. Again, if you type, the
-text will be changed in both places. This is the second tabstop.</p>
-<pre class="language-md wrap"><code class="language-md wrap">&lt;section
-    id="section-id"
-    aria-labelledby="section-id"
-    data-item="<s>Title for Menu</s>"
-&gt;
-    &lt;h2&gt;&lt;a href="#section-id"&gt;<s>Title for Menu</s>&lt;/a&gt;&lt;/h2&gt;
-
-&lt;/section&gt;</code></pre>
-<p>Press the Tab key again, and now only the text for the
-<code>h2</code> link will be selected. This means that you can either
-provide the same entry in the menu as in the header, or provide a longer
-entry for the header.</p>
-<h2 id="creating-a-new-markdown-file-with-its-own-section">Creating a
-new Markdown file with its own section</h2>
-<p>HTM-Elves will get confused if you create a section inside another
-section. A better plan is to create a new Markdown file inside the
-<code>docs/md/</code> folder. This will be the second file in your
-project, so you could call it
-<code>02-Now_We're_Ready_To_Start.md</code>.</p>
-<p>Into the empty file, type <code>sss</code>. I chose this prefix
-because <code>s</code> is the first letter of ‘section’, and I am too
-lazy to move more than one finger. Press the Tab key. A much more
-complex snippet will read the file name and replace all the
-<code>-</code> dash and <code>_</code> underscore characters with
-spaces. It will also strip off the leading <code>0</code>, and the
-<code>.md</code> file extension.</p>
-<pre class="language-md wrap"><code class="language-md wrap">&lt;!-- <s>2. Now We're Ready To Start</s> --&gt;
-&lt;section
-  id="<s>2. Now We're Ready To Start</s>"
-  aria-labelledby="<s>2. Now We're Ready To Start</s>"
-  data-item="<s>2. Now We're Ready To Start</s>"
-&gt;
-  &lt;h2&gt;&lt;a href="#<s>2. Now We're Ready To Start</s>"&gt;<s>2. Now We're Ready To Start</s>/a&gt;&lt;/h2&gt;
-  
-
-&lt;/section&gt;</code></pre>
-<p>All the tabstops are selected, because they are interconnected. Type
-<code>Let's go!</code> to replace the current text, then press the Tab
-key 5 times. The entries for the different attributes will be formatted
-appropriately.</p>
-<pre class="language-md"><code class="language-md">&lt;!-- Let's go! --&gt;
-&lt;section
-  id="lets-go"
-  aria-labelledby="lets-go"
-  data-item="Let's Go!"
-&gt;
-  &lt;h2&gt;&lt;a href="#lets-go"&gt;Let's Go!&lt;/a&gt;&lt;/h2&gt;
-  
-
-&lt;/section&gt;</code></pre>
-<p>The cursor should now be flashing in the space just under the
-<code>&lt;h2&gt;</code> tag. Type <code>This is page 2</code>.</p>
-<p>Check your browser. If you still have <code>npm run watch</code>
-running, then you should see a new entry in the menu, and a new page
-when you select this entry:</p>
-<figure>
-<img src="images/PageTwo.webp" alt="You now have a second page" />
-<figcaption aria-hidden="true">You now have a second page</figcaption>
-</figure>
-<details class="pivot" open>
-<summary>
-Not just snippets
-</summary>
-<p>There are several other snippets that you haven’t tested yet, for
-inserting images, creating code listings with syntax highlighting, and
-adding optional details elements. I’ll introduce these over the cours of
-the next few sections.</p>
-<p>Next, though I’ll remind you of some of the standard things that
-Markdown can do, and you can see how Pandoc converts these into
-HTML.</p>
-</details>
-</section>
-<!-- 8. Paragraphs And Headings -->
-<section id="paragraphs-and-headings" aria-labelledby="paragraphs-and-headings" data-item="8. Paragraphs &amp; Headings">
-<h2>
-<a href="#paragraphs-and-headings">Paragraphs And Headings</a>
-</h2>
-</section>
-<!-- Images -->
-<section id="images" aria-labelledby="images" data-item="9. Images">
+<section id="images" aria-labelledby="images" data-item="Images">
 <h2>
 <a href="#images">Images</a>
 </h2>
+<p>Coming back to <a
+href="https://htm-elves.github.io/Using-CSS-Counters/"
+target="htm-elves">the mini tutorial</a>, the next feature it
+illustrates is the insertion of an image with a caption.</p>
+<details class="note" open>
+<summary>
+Summary
+</summary>
+<p>You can download the images for this mini tutorial from <a
+href="http://htm-elves.github.io/Using-CSS-Counters/Using-CSS-Counters_images.zip">here</a>.
+Decompress the ZIP file, then move the three images to the folder
+<code>MyTutorials/Using-CSS-Counters/docs/images/</code>.</p>
+</details>
+<p>Here’s how the mini tutorial continues:</p>
+<pre class="language-md wrap"><code class="language-md wrap">You've used an ordered list, because you want the list items to be numbered. When you apply your best CSS styling, you really want the items to appear like this:
+
+![What you want](images/expected.webp)</code></pre>
+<p>And here is how it appears in the browser, with its caption: <img
+src="images/ImageWithCaption.webp"
+alt="No blank line means no caption" /></p>
+<h2 id="points-to-note">Points to note</h2>
+<p>There are six points to note here:</p>
+<ol type="1">
+<li>Pandoc insists that there <strong>must</strong> be a blank line
+before the Markdown line that inserts an image. If you do not have a
+blank line, then the image will be shown no caption. (You can see that
+this is the case with image above which has no caption for this very
+reason: the text <code>Figure 3: What you want</code> is in fact part of
+the image.)</li>
+<li>The syntax is similar to the link syntax, except that it is prefixed
+with an exclamation mark (<code>!</code>).</li>
+<li>The text in the square brackets is used as the caption.</li>
+<li>The link to the image is given inside round parentheses following
+the square brackets.</li>
+<li>There must be no space between the square brackets and the round
+parentheses</li>
+<li>The final point requires a fuller explanation.</li>
+</ol>
+<h2 id="where-images-are-stored">6. Where images are stored</h2>
+<p>When you create an image for your tutorial, you should place it in
+the file at <code>docs/images/</code>.</p>
+<p>If you type the Markdown snippet prefix <code>img</code>, the
+following snippet will be added:</p>
+<pre class="language-md"><code class="language-md">![Caption](images<u>/filename</u>)</code></pre>
+<p>If you immediately press the <code>/</code> key, VS Code will look in
+the <code>docs/images/</code> and present you with a contextual menu
+showing you all the available images. You can start typing the name of
+the image you want to bring it to the top of the list. Press Tab to
+choose it (or use your mouse).</p>
+<p>If you press Tab again, the word <code>Caption</code> will be
+selected, and you can type the caption that you want to appear under
+your image.</p>
+<pre class="language-md"><code class="language-md">![<u>Caption</u>](images/ChosenImage.jpg)</code></pre>
+<h2 id="customizing-the-caption">Customizing the caption</h2>
+<p><code>MyTutorials.github.io/public/styles.css</code> contains a rule
+for automatically numbering the <code>figcaption</code> elements in your
+<code>index.html</code> file. Look for the following rule if you want to
+name or style your images differently.</p>
+<pre class="language-css line-numbers" data-start="210"><code class="language-css line-numbers"><i>figure {
+  margin: 0;
+
+  figcaption {
+    margin-bottom: 3em;
+    text-align: center;
+    text-decoration: underline;
+    color: var(--mid);
+
+    </i><b>&::before {&gt;
+      counter-increment: fig;
+      content: "Figure " counter(fig) ": ";
+    }</b><i>
+  }
+}</i></code></pre>
+<details class="tldr">
+<summary>
+VS Code Markdown Preview
+</summary>
+<p>When the file at <code>docs/index.html</code> is published, it will
+look in the folder at <code>docs/images/</code> for any images that you
+want to use. When you are working in Markdown in VS Code, you can choose
+to show a Preview of any Markdown file, using one of the techniques in
+the composite Figure 8 below.</p>
+<figure>
+<img src="images/OpenPreview.webp" alt="Caption" />
+<figcaption aria-hidden="true">Caption</figcaption>
+</figure>
+<p>To ensure that the Preview can also see the images in
+<code>docs/images/</code> using the path
+<code>images/ImageFileName.ext</code>, HTM-Elves has created a symbolic
+link for you called <code>images</code> inside the <code>docs/md/</code>
+folder.</p>
+<details class="warn">
+<summary>
+docs/md/images in .gitignore
+</summary>
+<p>If this symbolic link gets pushed to your GitHub repository, GitHub’s
+publish workflow will fail. It’s important that .gitignore contains an
+entry for <code>docs/md/images</code>.</p>
+</details>
+<figure>
+<img src="images/Preview.webp"
+alt="Using VS Code Preview with your Markdown file" />
+<figcaption aria-hidden="true">Using VS Code Preview with your Markdown
+file</figcaption>
+</figure>
+</details>
+<details class="challenge" open>
+<summary>
+Finish the first page
+</summary>
+<p>It should be easy for you now to finish the first page. You’ll be
+using techniques that you have already seen. Try it for yourself, before
+you look at the solution.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>Be sure that the <code>actual.webp</code> image is in the
+<code>docs/images/</code> folder. You can download it from <a
+href="http://htm-elves.github.io/Using-CSS-Counters/Using-CSS-Counters_images.zip">here</a>.</p>
+<p>Here’s the Markdown that you need to add:</p>
+<pre class="language-md wrap"><code class="language-md wrap">Instead, the numbers for each list item appear outside the `&lt;li&gt;` elements, like this:
+
+![What you get](images/actual.webp)
+
+How can you fix this?</code></pre>
+<p>Remember to leave blank lines around the image link. If you don’t,
+you won’t see the caption.</p>
+</details>
+</details>
 </section>
-<!-- Code Listings -->
-<section id="code-listings" aria-labelledby="code-listings" data-item="10. Code Listings">
+<section id="creating-a-new-page" aria-labelledby="creating-a-new-page" data-item="Creating A New Page">
 <h2>
-<a href="#code-listings">Code Listings</a>
+<a href="#creating-a-new-page">Creating a New Page</a>
 </h2>
+<p>The first page is complete. Now you need to create a second page for
+<a href="https://htm-elves.github.io/Using-CSS-Counters/#the-solution"
+target="htm-elves">the mini tutorial</a>.</p>
+<h2 id="starting-a-new-page">Starting a new page</h2>
+<ol type="1">
+<li>Create a new file in the <code>Using-CSS-Counters/docs/md</code>
+folder, and call it <code>02-The-Solution.md</code></li>
+<li>In the empty file, type <code>sss</code> and press the Tab key five
+times, just like you did in section <a href="#framing-the-problem">4.
+Framing the Problem</a>, to create a <code>&lt;section&gt;</code>
+element for the new page.</li>
+</ol>
+<details class="tip" open>
+<summary>
+Create a section for every Markdown file
+</summary>
+<p>Remember to create a new section in this way for every Markdown file
+that you add to your tutorial. Any file which does not have a section
+with this format may not appear in the correct order and will not have
+its own entry in the menu.</p>
+<p>And remember to press the Tab key at least twice: once to insert the
+<code>&lt;section&gt;</code> snippet, and once to transform the values
+for <code>id</code>, <code>aria-labelledby</code> and
+<code>href</code>.</p>
+</details>
+<h2 id="a-simple-beginning">A simple beginning</h2>
+<p>The first sentence is just plain text, with a link, like you have
+seen before:</p>
+<pre class="language-md wrap"><code class="language-md wrap">The solution is to use a [CSS counter](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters). You’ll need to do four things:</code></pre>
+<p>In the next section, you’ll see how to create a numbered list.</p>
 </section>
-<!-- Details -->
-<section id="details" aria-labelledby="details" data-item="11. Details">
+<section id="numbers-and-bullets" aria-labelledby="numbers-and-bullets" data-item="Numbers And Bullets">
+<h2>
+<a href="#numbers-and-bullets">Numbered List and Bullet Lists</a>
+</h2>
+<p>The Solutions page of <a
+href="https://htm-elves.github.io/Using-CSS-Counters/#the-solution"
+target="htm-elves">the mini tutorial</a> illustrates a new feature: a
+numbered list:</p>
+<figure>
+<img src="images/NumberedList.webp" alt="A numbered list" />
+<figcaption aria-hidden="true">A numbered list</figcaption>
+</figure>
+<p>To create a numbered list in Markdown, you simply need to start the
+first line with the text <code>1.</code> That is, the character
+<code>1</code> followed by a dot, followed by a space. From now on, VS
+Code’s Markdown engine will know that you are creating a numbered
+list.</p>
+<details class="tip" open>
+<summary>
+Automatic numbering
+</summary>
+<p>Apart from the number that starts the list, Markdown doesn’t care
+what numbers you for the following lines. They could all be
+<code>1</code>s, for example.</p>
+<p>To test this:</p>
+<ol type="1">
+<li>Paste the following block (which has no line numbers) into your
+<code>02-The-Solution.md</code> file:</li>
+</ol>
+<pre class="language-md wrap"><code class="language-md wrap">Declare a counter and give it an initial value
+Increment the counter for each element that should be numbered
+Display the newly-incremented value in the numbered element. This is usually done using the `content` of a `::before` pseudo-element
+Add `". "` as decoration in the `content` of the `::before` pseudo-element.</code></pre>
+<ol start="2" type="1">
+<li>Click just before the first <code>D</code>, then Alt-Click before
+the first character of each of the four lines, so that you now have four
+flashing insertion cursors, a bit like what you see below.</li>
+</ol>
+<pre class="language-md wrap"><code class="language-md wrap">|Declare a counter and give it an initial value
+|Increment the counter for each element that should be numbered
+|Display the newly-incremented value in the numbered element. This is usually done using the `content` of a `::before` pseudo-element
+|Add `". "` as decoration in the `content` of the `::before` pseudo-element.</code></pre>
+<ol start="3" type="1">
+<li>Type <code>1.</code> Because you set four cursors, this string
+should appear is four places, at the beginning of each of the four
+lines.</li>
+</ol>
+<pre class="language-md wrap"><code class="language-md wrap">1. Declare a counter and give it an initial value
+1. Increment the counter for each element that should be numbered
+1. Display the newly-incremented value in the numbered element. This is usually done using the `content` of a `::before` pseudo-element
+1. Add `". "` as decoration in the `content` of the `::before` pseudo-element.</code></pre>
+<ol start="4" type="1">
+<li>Check the live display in your browser. This is what you should
+see:</li>
+</ol>
+<figure>
+<img src="images/NumberedList.webp"
+alt="Markdown simply increments from the first number in a numbered list" />
+<figcaption aria-hidden="true">Markdown simply increments from the first
+number in a numbered list</figcaption>
+</figure>
+<p>For more details on working with multiple selections and multiple
+cursors in VS Code, see <a
+href="https://code.visualstudio.com/docs/editor/codebasics">the official
+documentation</a>.</p>
+</details>
+<h2 id="bullet-lists">Bullet lists</h2>
+<p>To create a bullet list you can start the first line of the list
+with:</p>
+<ul>
+<li>an asterisk (<code>*</code>)</li>
+<li>a plus sign (<code>+</code>)</li>
+<li>or a dash (<code>-</code>)</li>
+</ul>
+<p>Here’s the actual Markdown that I used to create the bullet list
+above:</p>
+<pre class="language-md"><code class="language-md">* an asterisk (`*`)
++ a plus sign (`+`)
+- or a dash (`-`)</code></pre>
+<p>All three characters are considered equivalent. All convert to
+bullets.</p>
+</section>
+<section id="review" aria-labelledby="review" data-item="Review">
+<h2>
+<a href="#review">Another Code Listing and an Image</a>
+</h2>
+<p>The next part of the Solutions page of <a
+href="https://htm-elves.github.io/Using-CSS-Counters/#the-solution"
+target="htm-elves">the mini tutorial</a> reviews techniques that you
+have already seen:</p>
+<ul>
+<li>Typing some basic text</li>
+<li>Inserting a code listing (without line numbering)</li>
+<li>Inserting an image</li>
+</ul>
+<details class="challenge" open>
+<summary>
+Try it yourself
+</summary>
+<h3 id="this-is-what-you-need-to-add">This is what you need to add:</h3>
+<hr />
+<p>Taking the CSS that is used for the rest of the styling as given, you
+can add this rule:</p>
+<pre class="language-css"><code class="language-css">ol {
+  counter-reset: item 0;
+
+  a::before {
+    counter-increment: item 1;
+    content: counter(item) ". ";
+  }
+}</code></pre>
+<p>This almost solves the problem:</p>
+<figure>
+<img src="images/almost.webp"
+alt="The link elements are now numbered" />
+<figcaption aria-hidden="true">The link elements are now
+numbered</figcaption>
+</figure>
+<hr />
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>This is the Markdown that you need:</p>
+<pre class="language-md wrap"><code class="language-md wrap">Taking the CSS that is used for the rest of the styling as given, you can add this rule:
+
+```css-#
+ol {
+  counter-reset: item 0;
+
+  a::before {
+    counter-increment: item 1;
+    content: counter(item) ". ";
+  }
+}
+```
+
+This almost solves the problem:
+
+![The link elements are now numbered](images/almost.webp)</code></pre>
+<p>Remember to:</p>
+<ul>
+<li>Use the Markdown snippet prefix <code>css</code> to add a CSS code
+block</li>
+<li>Use <code>css-#</code> to hide the line-numbering</li>
+<li>Use the Markdown snippet prefix <code>img</code> to add an image
+link</li>
+<li>Leave a blank line before the image link</li>
+</ul>
+</details>
+</details>
+</section>
+<section id="details" aria-labelledby="details" data-item="Details">
 <h2>
 <a href="#details">Details</a>
 </h2>
+<p>As you may have noticed, I like to include coloured blocks which you
+can collapse and ignore if you are in a hurry. These are handled by HTML
+<code>&lt;details&gt;</code> elements. The icons they use can be found
+in <code>MyTutorials.github.io/public/svg/</code>.</p>
+<p>To create one, type the Markdown prefix <code>ddd</code> (for
+<strong>d</strong>etails). You’ll be asked to choose one of the
+following styles:</p>
+<figure>
+<img src="images/Details.webp"
+alt="The dialog for the Details snippet" />
+<figcaption aria-hidden="true">The dialog for the Details
+snippet</figcaption>
+</figure>
+<h2 id="what-the-different-details-classes-look-like">What the different
+<code>details</code> classes look like</h2>
+<details class="note" open>
+<summary>
+Note
+</summary>
+<p>This is a note.</p>
+</details>
+<details class="feedback" open>
+<summary>
+Feedback
+</summary>
+<p>This is a request for feedback.</p>
+</details>
+<details class="tip" open>
+<summary>
+Tip
+</summary>
+<p>This is a tip.</p>
+</details>
+</details>
+<details class="warn" open>
+<summary>
+Warn
+</summary>
+<p>This is a warning.</p>
+</details>
+<details class="alert" open>
+<summary>
+Alert
+</summary>
+<p>This is a alert.</p>
+</details>
+<details class="question" open>
+<summary>
+Question
+</summary>
+<p>This is a question, to make you think ahead.</p>
+</details>
+<details class="challenge" open>
+<summary>
+Challenge
+</summary>
+<p>This is a challenge. You will be asked to find your own way to deal
+with a task before you reveal the solution.</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>You’ll find the solution here.</p>
+</details>
+</details>
+<details class="tldr">
+<summary>
+TL;DR
+</summary>
+<p>This is a deep dive into a topic. It’s usually not open.</p>
+</details>
+<details class="pivot" open>
+<summary>
+Pivot
+</summary>
+<p>This concludes a section and introduces the next topic.</p>
+</details>
+<h2 id="styling">Styling</h2>
+<p>The colours for the <code>&lt;details&gt;</code> elements are defined
+in the <code>:root</code> section of
+<code>MyTutorials.github.io/public/styles/</code>.</p>
+<pre class="language-css line-numbers" data-start="33"><code class="language-css line-numbers">  /* Details */
+  --alert:     #600;
+  --challenge: #609;
+  --env:       #069;
+  --feedback:  #064;
+  --note:      #040;
+  --pivot:     #03c;
+  --question:  #907;
+  --solution:  #4069;
+  --tip:       #960;
+  --tldr:      #004;
+  --warn:      #630;</code></pre>
+<p>The <code>background-color</code>s are generated using the newly
+available <code>color-mix</code> functional notation:</p>
+<pre class="language-css line-numbers" data-start="664"><code class="language-css line-numbers">  background-color: color-mix(
+    in oklab,
+    var(--bg-color),
+    var(--darker)
+  );</code></pre>
+<p>In older browsers, the backgrounds should just appear plain.</p>
 </section>
-<!-- Automatic Repo Creation -->
-<section id="automatic-repo-creation" aria-labelledby="automatic-repo-creation" data-item="12. Automatic Repo Creation">
+<section id="details-in-action" aria-labelledby="details-in-action" data-item="Details In Action">
 <h2>
-<a href="#automatic-repo-creation">Creating a GitHub Repository
-Automatically</a>
+<a href="#details-in-action">Details In Action</a>
 </h2>
+<p>On the Solutions page of <a
+href="https://htm-elves.github.io/Using-CSS-Counters/#the-solution"
+target="htm-elves">the mini tutorial</a>, I’ve used a
+<code>details</code> element with the class of <code>tip</code>. Here’s
+what it looks like:</p>
+<details class="tip" open>
+<summary>
+Default values
+</summary>
+<p>The default value for <code>counter-reset</code> is <code>0</code>,
+and the default value for <code>counter-increment</code> is
+<code>1</code>, so the less explicit CSS below has exactly the same
+effect.</p>
+<pre class="language-css"><code class="language-css">ol {
+  counter-reset: item;
+
+  a::before {
+    counter-increment: item;
+    content: counter(item) ". ";
+  }
+}</code></pre>
+</details>
+<p>Note that the background for the code listing inside a
+<code>&lt;details&gt;</code> element is slightly tinted to contrast with
+the regular text.</p>
+<hr />
+<details class="warn" open>
+<summary>
+Pandoc has opinions about blank lines
+</summary>
+<p>Pandoc expects there to be a blank line before the closing
+<code>/&lt;details&gt;</code> tag. If there is no blank line, then the
+last block of text will <strong>not</strong> be converted to a
+paragraph, so its appearance may look odd.</p>
+For example, there is no blank space after this block of text, so it is
+not enclosed in a paragraph element, and its line-height is less than
+expected. The actual HTML generated for this
+<code>&lt;details&gt;</code> element is shown in the code listing below.
+</details>
+<pre class="language-html wrap"><code class="language-html wrap"><i>&lt;details class="warn" open=""&gt;
+&lt;summary&gt;
+Pandoc and blank lines
+&lt;/summary&gt;
+</i><b>&lt;p&gt;</b><i>Pandoc expects there to be a blank line before the closing
+&lt;code&gt;/&lt;details&gt;&lt;/code&gt; tag. If there is no blank line, then the last block of text will not be converted to a paragraph, so its appearance may look odd.</i><b>&lt;/p&gt;</b><i>
+</i><b>For example, there is no blank space after this line of text, so it is not enclosed in a paragraph element, and its line-height is less than expected. The actual HTML generated for this `&lt;details&gt;` element is shown in the code listing below.</b><i>
+&lt;/details&gt;</i></code></pre>
 </section>
-<!-- Automatic Publishing -->
-<section id="automatic-publishing" aria-labelledby="automatic-publishing" data-item="13. Automatic Publishing">
+<section id="headers" aria-labelledby="headers" data-item="Headers" class="no-margin">
 <h2>
-<a href="#automatic-publishing">Automatic Publishing</a>
+<a href="#headers">Headers</a>
 </h2>
+<p>On the Solutions page of <a
+href="https://htm-elves.github.io/Using-CSS-Counters/#the-solution"
+target="htm-elves">the mini tutorial</a>, under the details block,
+there’s a Level 2 Header, like this:</p>
+<hr />
+<h2 id="hiding-the-built-in-numbering-system">Hiding the built-in
+numbering system</h2>
+<hr />
+<p>How is this done?</p>
+<p> </p>
+<h2 id="creating-headers-in-markdown">Creating Headers in Markdown</h2>
+<p>There are two ways of creating headers in Markdown:</p>
+<ul>
+<li>Using <code>#</code> characters. The number of <code>#</code>
+determines the level of the header. You can include more hashes after
+the header, but they will be ignored.</li>
+<li>Adding <code>===</code> or <code>---</code> on the next line. This
+only works for Level 1 and Level 2 headers.</li>
+</ul>
+<p>Examples:</p>
+<h1 id="level-1-header">Level 1 Header</h1>
+<h2 id="level-2-header">Level 2 Header</h2>
+<h3 id="level-3-header">Level 3 Header</h3>
+<h4 id="level-4-header">Level 4 Header</h4>
+<h5 id="level-5-header">Level 5 Header</h5>
+<details class="note" open>
+<summary>
+Level 1 === Level 2?
+</summary>
+<p>You may be surprised to see that the Level 1 and Level 2 headers
+above look the same. This is because this content is inside a
+<code>&lt;section&gt;</code> element, and is therefore not at the root
+level of the HTML page.</p>
+<p>The Powers That Be have decided that a header should never appear
+more important than hierarchical level of the container it is in. All
+the major browsers apply this rule.</p>
+<p>For more details see the official <a
+href="https://www.w3.org/TR/2011/WD-html5-author-20110809/headings-and-sections.html">4.4.11
+Headings and sections</a> document published by W3C. Here’s a quote:</p>
+<blockquote>
+<p>Sections may contain headings of any rank, but authors are strongly
+encouraged to either use only h1 elements, or to use elements of the
+appropriate rank for the section’s nesting level.</p>
+</blockquote>
+<p>In contrast, look at the header
+<code>Writing Your Own Tutorials</code> at the top of this page. This is
+a Level 1 header <em>at the root of the document</em>, so the browser
+allows it to appear full size.</p>
+</details>
+<p>All of the following will create a Level 1 header (which will look
+just like a Level 2 header if it’s inside a
+<code>&lt;section&gt;</code>):</p>
+<pre class="language-md"><code class="language-md"># Level 1 Header with initial hashes
+
+# Level 1 Header with trailing hashes ###
+
+Level 1 Header with === on the next line
+===</code></pre>
+<h1 id="level-1-header-with-initial-hashes">Level 1 Header with initial
+hashes</h1>
+<h1 id="level-1-header-with-trailing-hashes">Level 1 Header with
+trailing hashes</h1>
+<h1 id="level-1-header-with-on-the-next-line">Level 1 Header with === on
+the next line</h1>
+<p> </p>
+<p>All of the following will create a Level 2 header:</p>
+<pre class="language-md"><code class="language-md">## Level 2 Header with initial hashes
+
+## Level 2 Header with trailing hashes ##
+
+Level 2 Header with --- on the next line
+---</code></pre>
+<h2 id="level-2-header-with-initial-hashes">Level 2 Header with initial
+hashes</h2>
+<h2 id="level-2-header-with-trailing-hashes">Level 2 Header with
+trailing hashes</h2>
+<h2 id="level-2-header-with-on-the-next-line">Level 2 Header with — on
+the next line</h2>
+<p> </p>
+<p>Here’s how to create lower-level headers:</p>
+<pre class="language-md"><code class="language-md">### Level 3 Header
+#### Level 4 Header
+##### Level 5 Header</code></pre>
+<h3 id="level-3-header-1">Level 3 Header</h3>
+<h4 id="level-4-header-1">Level 4 Header</h4>
+<h5 id="level-5-header-1">Level 5 Header</h5>
 </section>
-<!-- 11. Target Or Last Child -->
-<section id="target-or-last-child" aria-labelledby="target-or-last-child" data-item="14. Target Or Last Child">
+<section id="finishing-the-tutorial" aria-labelledby="finishing-the-tutorial" data-item="Finishing The Tutorial">
 <h2>
-<a href="#target-or-last-child">Target Or Last Child</a>
+<a href="#finishing-the-tutorial">Finishing The Tutorial</a>
 </h2>
+<p>You should be able to complete the rest of the mini tutorial
+yourself, using the techniques that you have already seen.</p>
+<details class="challenge" open>
+<summary>
+Bright and dim code
+</summary>
+<p>Do you remember how you can make certain chunks stand out in a code
+listing, as in the example below?</p>
+<pre class="language-css"><code class="language-css"><i>ol {
+  counter-reset: item;</i>
+  <b>list-style-type: none;</b><i>
+
+  a::before {
+    counter-increment: item;
+    content: counter(item) ". ";
+  }
+}</i></code></pre>
+<p>What Markdown snippets can you use to work more efficiently?</p>
+<details class="solution">
+<summary>
+Solution
+</summary>
+<p>You can use the Markdown snippets:</p>
+<ul>
+<li><code>css</code> + Tab: to create a CSS code block</li>
+<li><code>&lt;i</code> + Tab: to wrap the whole code block in the quirky
+<code>&lt;i&gt;...&lt;/i&gt;</code> tags, to make the text dimmer</li>
+<li><code>ib</code> + Tab: to wrap just the code that you want to look
+brighter</li>
+</ul>
+<p>Remember to use <code>css-#</code> to remove the line-numbering.</p>
+<pre class="language-md line-numbers"><code class="language-md line-numbers">```css-#
+&lt;i&gt;ol {
+  counter-reset: item;
+  &lt;/i&gt;&lt;b&gt;list-style-type: none;&lt;/b&gt;&lt;i&gt;
+
+  a::before {
+    counter-increment: item;
+    content: counter(item) ". ";
+  }
+}&lt;/i&gt;
+```</code></pre>
+</details>
+</details>
+<h2 id="the-final-page">The final page</h2>
+<p>The final page requires you to practice your new skills:</p>
+<ol type="1">
+<li>Add a new Markdown file</li>
+<li>Give it an number greater than <code>02</code> and less than
+<code>99</code>, so that it will appear in the correct place</li>
+<li>Use the <code>sss</code> + Tab + Tab Markdown snippet to create the
+necessary <code>&lt;section&gt;</code> element</li>
+<li>Add an image</li>
+<li>Add a CSS code listing (<em>with</em> line-numbering).</li>
+</ol>
+<p>And that’s it!</p>
+<h2 id="publishing-your-tutorial">Publishing your tutorial</h2>
+<p>All that’s left to do is:</p>
+<ol type="1">
+<li>Commit your changes</li>
+<li>Push to your GitHub repository</li>
+<li>Run <code>npm run publish</code> in a Terminal window open on your
+<code>Using-CSS-Counters</code> directory</li>
+</ol>
+<figure>
+<img src="images/CommitPublish.webp"
+alt="Commit, push and publish your tutorial" />
+<figcaption aria-hidden="true">Commit, push and publish your
+tutorial</figcaption>
+</figure>
+<p>And finally:</p>
+<ol start="4" type="1">
+<li>Let other’s know where to find your new tutorial.</li>
+</ol>
+<p>(You won’t have to publish your tutorial again. If you make a change,
+it will be enough to commit the changes and push them to your GitHub
+repository.)</p>
 </section>
-<!-- 12. Quirks Or Features -->
-<section id="quirks-or-features" aria-labelledby="quirks-or-features" data-item="15. Quirks Or Features?">
+<section id="fixing-index-links" aria-labelledby="fixing-index-links" data-item="Fixing the Index Links">
 <h2>
-<a href="#quirks-or-features">Quirks Or Features?</a>
+<a href="iing-index-links">Fixing the Index Links</a>
 </h2>
-<p>Pandoc has its own opinion about when there should be blank lines in
-your Markdown text.</p>
+<p>Your tutorial is now live. But your home page at
+<code>https://MyTutorials.github.io/</code> is still showing the names
+of placeholder tutorials, with links that do not work. Here’s what it
+looks like now:</p>
+<figure>
+<img src="images/CurrentLook.webp"
+alt="What your home page looks like now" />
+<figcaption aria-hidden="true">What your home page looks like
+now</figcaption>
+</figure>
+<p>The most important change to make is add a link for your new
+tutorial. That’s what I’ll treat in this section. In the next section,
+I’ll show you where to make the changes to show your own choice of text,
+so perhaps your new home page might soon look like something like the
+one shown below.</p>
+<figure>
+<img src="images/NewLook.webp"
+alt="Redesigned with a link to your tutorial" />
+<figcaption aria-hidden="true">Redesigned with a link to your
+tutorial</figcaption>
+</figure>
+<h2 id="the-links-in-tutorials.json">The links in
+<code>tutorials.json</code></h2>
+<p>The file at <code>MyTutorials.github.io/private/tutorials.json</code>
+contains some dummy data which is read in by
+<code>MyTutorials.github.io/private/script.js</code>, and used to
+generate a link for each of your tutorials. You can delete its contents
+and replace it with something like this:</p>
+<pre class="language-json line-numbers"><code class="language-json line-numbers">[
+  { "name": "Using CSS Counters",
+    "url": "<b>/Using-CSS-Counters</b>",
+    "description": "Numbering elements that are not in an ordered list",
+    "icon": "private/icons/counters.webp"
+  }
+]
+</code></pre>
+<p>Notice how the <code>"url"</code> entry starts with a slash
+(<code>/</code>) followed by the name of your new tutorial repository.
+This relative path works because your home page is at
+<code>http://MyTutorials.github.io</code> and your tutorial repository
+is published at
+<code>http://MyTutorials.github.io/Using-CSS-Counters</code>.</p>
+<p>You can choose whatever text you want for the <code>"name"</code> and
+<code>"description"</code>.</p>
+<p>For the icon, I’ve created a small image and placed it inside the
+folder at <code>MyTutorials.github.io/private/icons</code>, so you can
+use a relative path here too.</p>
+<p>The script at <code>MyTutorials.github.io/private/script.js</code>
+contains a function called <code>generateTutorialLinksFromJSON()</code>.
+This will read in the <code>tutorials.json</code> and generate a list
+item for each entry.</p>
+<details class="note" open>
+<summary>
+Required or optional
+</summary>
+<p>Note that:</p>
+<ul>
+<li>If there is no <code>"url"</code>, the tutorial link will not
+show.</li>
+<li>However, there is no check to ensure that the <code>"url"</code>
+value is valid, so you need to take care.</li>
+<li>Either <code>"name"</code> or <code>"description"</code> must be
+given, or the tutorial link will not show.</li>
+<li>If no icon is provided, a default mortarboard icon will be shown.
+This is stored at
+<code>MyTutorials.github.io/private/icons/default.svg</code>, and you
+can replace it with another image if you prefer. If you want to change
+its name, you can change this line in
+<code>MyTutorials.github.io/private/script.js</code>:</li>
+</ul>
+<pre class="language-javascript line-numbers" data-start="50"><code class="language-javascript line-numbers"><i> tutorials.forEach(({
+      url, 
+      name="",
+      description="",
+      icon="</i><b>private/icons/default.svg</b><i>"
+    }) =&gt; {</i></code></pre>
+<pre class="skip"><code class="skip">// lines skipped //</code></pre>
+<pre class="language-javascript line-numbers" data-start="80"><code class="language-javascript line-numbers">  <i>})</i></code></pre>
+<ul>
+<li>If the icon is invalid, no image will appear.</li>
+</ul>
+</details>
+<h2 id="storing-links-in-a-json-file">Storing links in a JSON file</h2>
+<p>Storing your links in a JSON file means that it is easy to find, add
+to and reorganize them. It also means that it will be require very few
+changes to the <code>private/script.js</code> if one day you decide to
+read in the links from a database instead of a JSON file.</p>
 </section>
-<section id="intro" aria-labelledby="intro" data-item="1. Introduction">
+<section id="minimum-tweaks" aria-labelledby="minimum-tweaks" data-item="Minimum Tweaks">
+<h2>
+<a href="#minimum-tweaks">Minimum Tweaks to the Other Content</a>
+</h2>
+<p>You probably want to redesign your home page entirely. My black and
+white minimalism may not suit you. In that case, you can just skim
+through this section to see how not to break anything.</p>
+<p>I’ll simply describe the least amount of changes you can make to make
+this page your own.</p>
+<h2 id="remove-auto-generated-text">Remove auto-generated text</h2>
+<p>The HTM-Elves don’t know which name you chose for the GitHub
+organization which will be hosting your tutorials. The best they can do
+is read the <code>location</code> of the site where your home page is
+hosted, and use the <code>hostname</code> from there as their educated
+guess.</p>
+<p>They do this in the file at
+<code>MyTutorials/MyTutorials.github.io/private/script.js</code>:</p>
+<pre class="language-js line-numbers"><code class="language-js line-numbers">;(function useRepositoryNameForTitle() {
+  const locations = Array.from(
+    document.getElementsByClassName("location")
+  )
+
+  let { protocol, hostname, pathname } = location</code></pre>
+<pre class="skip"><code class="skip">// 7 lines skipped //</code></pre>
+<pre class="language-js line-numbers" data-start="17"><code class="language-js line-numbers">  locations.forEach( location =&gt; location.innerText = hostname)
+
+  const link = `https://github.com/orgs/${hostname}/repositories`
+  const repoAnchor = document.querySelector("footer a")
+  repoAnchor.href = link
+})()</code></pre>
+<p>This function does two things that you won’t need any more. You can
+remove it… but you’ll need to make a couple of manual changes to your
+<code>index.html</code> file so that it works just as well without the
+<code>useRepositoryNameForTitle()</code> function.</p>
+<h2 id="set-your-own-title-and-header">Set your own Title and
+Header</h2>
+<p>The <code>useRepositoryNameForTitle()</code> function looks for
+elements in your <code>index.html</code> file which have the class
+<code>"location"</code>, and it replaces the content of those elements
+with the <code>hostname</code> that it read from the page’s
+<code>location</code>.</p>
+<p>You don’t need this any more. In your <code>index.html</code> file,
+you can look for the <code>&lt;title&gt;</code> and
+<code>&lt;header&gt;&lt;h1&gt;</code> tags, and replace their content
+with whatever you want to show. In other words:</p>
+<ol type="1">
+<li>Remove the chunks that are highlighted in the code listing
+below:</li>
+</ol>
+<pre class="language-html line-numbers"><code class="language-html line-numbers"><i>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;</i></code></pre>
+<pre class="skip"><code class="skip">&lt;!-- lines skipped --&gt;</code></pre>
+<pre class="language-html line-numbers" data-start="11"><code class="language-html line-numbers"><i>  &lt;title </i><b>class="location"</b><i>&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Welcome to </i><b>&lt;span class="location"&gt;</b><i>Title</i><b>&lt;/span&gt;</b></i>!&lt;/h1&gt;
+    &lt;/header&gt;</i></code></pre>
+<pre class="skip"><code class="skip">&lt;!-- lines skipped --&gt;</code></pre>
+<pre class="language-html line-numbers" data-start="30"><code class="language-html line-numbers"><i>  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</i></code></pre>
+<ol start="2" type="1">
+<li>Use your own <code>title</code> and <code>header</code>:</li>
+</ol>
+<pre class="language-html line-numbers"><code class="language-html line-numbers"><i>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;</i></code></pre>
+<pre class="skip"><code class="skip">&lt;!-- lines skipped --&gt;</code></pre>
+<pre class="language-html line-numbers" data-start="11"><code class="language-html line-numbers"><i>  &lt;title&gt;</i><b>Your own Title</b><i>&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main&gt;
+    &lt;header&gt;
+      &lt;h1&gt;</i><b>Whatever Welcome message you want</b><i>&lt;/h1&gt;
+    &lt;/header&gt;</i></code></pre>
+<pre class="skip"><code class="skip">&lt;!-- lines skipped --&gt;</code></pre>
+<pre class="language-html line-numbers" data-start="30"><code class="language-html line-numbers"><i>  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</i></code></pre>
+<h2 id="set-the-link-to-your-github-repository">Set the link to your
+GitHub repository</h2>
+<p>If you remove the <code>useRepositoryNameForTitle()</code> function,
+you should also manually set the <code>href</code> link for your GitHub
+repository in the footer.</p>
+<ol type="1">
+<li>Remove the <code>#</code> character</li>
+</ol>
+<pre class="language-html line-numbers" data-start="24"><code class="language-html line-numbers">    <i>&lt;footer&gt;
+      &lt;span&gt;Updated December 2024&lt;/span&gt;
+      &lt;a href="</i><b>#</b><i>"&gt;
+        &lt;img src="public/svg/github.svg" alt="GitHub"&gt;
+       &lt;/a&gt;
+    &lt;/footer&gt;</i></code></pre>
+<ol start="2" type="1">
+<li>Replace it with the actual link to the GitHub repository of your
+organization:</li>
+</ol>
+<pre class="language-html line-numbers" data-start="24"><code class="language-html line-numbers">    <i>&lt;footer&gt;
+      &lt;span&gt;Updated December 2024&lt;/span&gt;
+      &lt;a href="</i><b>https://github.com/orgs/YourOrganizationName/repositories</b><i>"&gt;
+        &lt;img src="public/svg/github.svg" alt="GitHub"&gt;
+       &lt;/a&gt;
+    &lt;/footer&gt;</i></code></pre>
+<p><strong>After you have made these changes, you can delete the
+<code>useRepositoryNameForTitle()</code> function from
+<code>MyTutorials/MyTutorials.github.io/private/script.js</code>.</strong></p>
+<h2 id="customize-your-overview-message">Customize your Overview
+message</h2>
+<p>The HTM-Elves added a paragraph
+(<code>&lt;p id="replace"&gt;&lt;/p&gt;</code>) to suggest how to
+customize your home page. You can remove this paragraph.</p>
+<pre class="language-html line-numbers" data-start="15"><code class="language-html line-numbers">    <i>&lt;header&gt;
+      &lt;h1&gt;Welcome to &lt;span class="location"&gt;Title&lt;/span&gt;!&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div class="overview"&gt;
+      </i><b>&lt;p&gt;Use this area to give an overview of your tutorials.&lt;/p&gt;</b><i>
+    &lt;/div&gt;
+    <s>&lt;p id="replace"&gt;&lt;/p&gt;</s>
+    &lt;ul id="tutorials"&gt;&lt;/ul&gt;</i></code></pre>
+<p>You can also edit the text inside the Overview div
+(<code>&lt;div class="overview"&gt;</code>), to explain what the reader
+should expect.</p>
+<pre class="language-html line-numbers" data-start="15"><code class="language-html line-numbers">    <i>&lt;header&gt;
+      &lt;h1&gt;Whatever Welcome message you want&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div class="overview"&gt;
+      </i><b>&lt;p&gt;Tutorials on the MERN stack&lt;/p&gt;
+      &lt;p&gt;HTML, CSS, SASS, JavaScript, NodeJS and more&lt;/p&gt;</b><i>
+    &lt;/div&gt;
+    &lt;ul id="tutorials"&gt;&lt;/ul&gt;</i></code></pre>
+<h2 id="styling-1">Styling</h2>
+<p>By default, <code>private/styles.css</code> will make the first
+paragraph slightly bigger and bolder. But you can edit
+<code>private/styles.css</code> to impose your own style</p>
+</details>
+</section>
+<section id="target-or-last-child" aria-labelledby="target-or-last-child" data-item="Target or Last Child?">
+<h2>
+<a href="#target-or-last-child">Target or Last Child?</a>
+</h2>
+<p>Here’s where I finally answer the question: Why must the first page
+be stored in the <em>highest-numbered</em> Markdown file?</p>
+<p>When I read a tutorial, I like to read it in chunks. I like to see a
+clear indication that I have reached the end of a section, and that the
+topic is about to change. I have time to pause and reflect before moving
+on. This helps me to manage the input of new information, which, I
+believe, helps me to remember what I have read.</p>
+<p>For this reason, I have designed HTM-Elves to create tutorials in
+sections. (I’ve also provided a way to switch to a single long page, for
+readers who prefer that layout. See below.)</p>
+<h2 id="a-css-only-solution-with-target">A CSS-only solution with
+<code>:target</code></h2>
+<p>Each Markdown file has a <code>&lt;section&gt;</code> to wrap all its
+content, and each <code>&lt;section&gt;</code> has a unique id. The menu
+contains a list of link elements, and each link element has as its
+<code>href</code>, the <code>id</code> of one of the sections. For
+example:</p>
+<pre class="language-html wrap"><code class="language-html wrap">&lt;a href="#intro"&gt;Introduction&lt;/a&gt;
+&lt;a href="#new-tutorial"&gt;Create A New Tutorial&lt;/a&gt;
+&lt;a href="#yaml"&gt;The YAML Block&lt;/a&gt;</code></pre>
+<p>When you click on a link in the menu, the <em>fragment</em> or
+<em>hash</em> in the address bar is set. For example: <a
+href="https://htm-elves.github.io/Writing-Your-Own-Tutorials/#yaml">https://htm-elves.github.io/Writing-Your-Own-Tutorials/#yaml</a>.</p>
+<p>CSS has a <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target"><code>:target</code>
+pseudo-class</a>. This is applied to the element whose <code>id</code>
+matches the URL fragment. By default, the browser will raise this
+element to the top of the viewport.</p>
+<p>Here’s the CSS that HTM-Elves uses:</p>
+<pre class="language-css line-numbers" data-start="109"><code class="language-css line-numbers">body:has(#pages:checked) {
+  /* Hide all sections, including last if there's a :target... */
+  section,
+  section:target ~ section:last-of-type {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  /* ...but show the :target if there is one, or last, if not */
+  section:target,
+  section:last-of-type {
+    height: auto;
+    width: auto;
+    overflow: auto;
+  }
+}</code></pre>
+<p>If no sections have an <code>id</code> that matches the URL fragment,
+then <code>section:last-of-type</code> will be shown, and all the others
+will be given a size of 0. If the <code>id</code> of any section does
+match the URL fragment, then only that section should be shown, and
+<code>section:last-of-type</code> should be hidden (unless of course the
+<code>:target</code> pseudo-class applies to it.)</p>
+<h2 id="the-sibling-operator">The <code>~</code> sibling operator</h2>
+<p>This selector…</p>
+<pre class="language-css wrap"><code class="language-css wrap">section:target ~ section:last-of-type</code></pre>
+<p>… selects the last <code>&lt;section&gt;</code> if <em>any one</em>
+of its older siblings has the <code>:target</code> pseudo-class.</p>
+<p>**CSS does not currently provide a simple way of detecting whether a
+given element has a <em>younger</em> sibling with the
+<code>:target</code> pseudo-class. The new <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has"><code>:has()</code>
+functional pseudo-class</a> looks like a good candidate for this but as
+the MDN page says:</p>
+<blockquote>
+<p>Pseudo-elements are also not valid selectors within :has() and
+pseudo-elements are not valid anchors for :has().</p>
+</blockquote>
+<p>So it’s only <code>section:last-of-type</code> that can know if there
+is the <code>:target</code> pseudo-class has not been applied.</p>
+<p>This is why the first section (as far as reading is concerned) must
+appear as the last section (as far as the HTML sibling hierarchy is
+concerned).</p>
+<h2 id="if-you-dont-want-your-tutorials-to-be-split-into-pages">If you
+don’t want your tutorials to be split into pages</h2>
+<p>At the top left of the menu is a discreet radio button set which
+allows you to select either a <code>#paging</code> radio button or a
+<code>#scroll</code> radio button. By default, the <code>#paging</code>
+radio button is checked, and the tutorial is divided into separate
+pages.</p>
+<pre class="language-html line-numbers" data-start="43"><code class="language-html line-numbers"><i>&lt;div class="paging"&gt;
+  &lt;label
+    title="Split into sections"
+  &gt;
+    &lt;img src="../public/svg/pages.svg" alt="pages"&gt;
+    &lt;input
+      type="radio"
+      name="paging"
+      id="pages"
+      </i><b>checked</b><i>
+    &gt;
+  &lt;/label&gt;
+  &lt;label
+    title="Show as a single page"
+  &gt;
+    &lt;img src="../public/svg/scroll.svg" alt="scroll"&gt;
+    &lt;input
+      type="radio"
+      name="paging"
+      id="scroll"
+    &gt;
+  &lt;/label&gt;
+&lt;/div&gt;</i></code></pre>
+<p>If you don’t want this, you can move the <code>checked</code>
+attribute to the <code>scroll</code> radio button, and by default your
+tutorial will be displayed as a single page. The items in the menu will
+still scroll your page to the appropriate position, and the appropriate
+item in the menu will highlight to show your progress through the
+document.</p>
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting" data-item="Troubleshooting">
+<h2>
+<a href="#troubleshooting">Troubleshooting</a>
+</h2>
+<h3 id="blank-lines">Blank lines</h3>
+<p>As I’ve mentioned before, Pandoc expects different elements to be
+separated by blank lines. If you find that the formatting in your
+browser looks strange, check if adding a blank line won’t fix it.</p>
+<h3 id="invalid-markdown">Invalid Markdown</h3>
+<p>Watchman asks Pandoc to convert your Markdown files while you are
+editing your Markdown pages. As a result, your Markdown might sometimes
+be in an invalid state, which causes Pandoc to exit with an error.</p>
+<p>If you notice that the browser version of your tutorial has stopped
+updating, return to the Terminal window where you ran
+<code>npm run pandoc</code> and execute the command again, if
+necessary.</p>
+<h3 id="reordering-sections">Reordering sections</h3>
+<p>Sections will be treated in alphabetical order. The best way to
+ensure they are treated in the order you want is to use zero-padded
+numbers for the file names, like <code>02-Things-to-do.md</code> and
+<code>03-Working-hands-free.md</code></p>
+<p>If you need to insert a section between two existing sections, you
+don’t need to renumber everything. You can simply use a decimal point to
+add an intermediate number, like
+<code>02.5-Your-site-is-live.md</code>.</p>
+<details class="feedback" open>
+<summary>
+Other issues
+</summary>
+<p>If you find any other issues with HTM-Elves, <a
+href="https://github.com/HTM-Elves.github.io/issues/new">create an
+issue</a> for me on GitHub, and I will get back to you as soon as I
+can.</p>
+</details>
+<h2 id="enjoy"><em>Enjoy!</em></h2>
+</section>
+<section id="intro" aria-labelledby="intro" data-item="Introduction">
 <h2>
 <a href="#intro">Introduction</a>
 </h2>
@@ -803,7 +1949,7 @@ write your own tutorials. I am assuming that you have already read <a
 href="https://htm-elves.github.io/Getting-Started">Getting Started with
 HTM-Elves</a>, and that you have already:</p>
 <ul class="task-list">
-<li><label><input type="checkbox" checked="" />Create your own GitHub
+<li><label><input type="checkbox" checked="" />Created your own GitHub
 Organization where you can publish tutorials</label></li>
 <li><label><input type="checkbox" checked="" />Forked the HTM-Elves
 repository, to use as the root of your tutorial
@@ -812,12 +1958,19 @@ organization</label></li>
 repository</label></li>
 <li><label><input type="checkbox" checked="" />Cloned your fork of the
 HTM-Elves repository to your local computer</label></li>
+<li><label><input type="checkbox" checked="" />Generated a GitHub
+personal access token and saved it in a <code>.env</code>
+file</label></li>
 <li><label><input type="checkbox" checked="" />Installed Pandoc and
 Watchman and a set of Node modules</label></li>
 <li><label><input type="checkbox" checked="" />Used HTM-Elves to
 generate a Demo tutorial</label></li>
 <li><label><input type="checkbox" checked="" />Published the Demo
 tutorial in your GitHub tutorial organization.</label></li>
+<li><label><input type="checkbox" checked="" />Installed the Live Server
+VS Code extension</label></li>
+<li><label><input type="checkbox" checked="" />Activated VS Code’s
+Markdown snippets, and installed a set of useful snippets</label></li>
 </ul>
 <p>If not, read <a
 href="https://htm-elves.github.io/Getting-Started">Getting Started with
@@ -826,37 +1979,53 @@ HTM-Elves</a> first, and follow the instructions step-by-step.</p>
 <p>In this article, you will:</p>
 <ol type="1">
 <li>Create a new tutorial from scratch, in Markdown</li>
-<li>Learn how to see the resulting HTML page in real time</li>
 <li>Learn how to customize the HTML template</li>
-<li>Learn to use VS Code snippets to simplify repetitive tasks</li>
-<li>Learn basic formatting techniques in Markdown</li>
-<li>See how to display code listings with syntax highlighting</li>
-<li>Learn how to automate common GitHub tasks</li>
-<li>Publish your tutorial, using the steps you learnt in <a
-href="https://htm-elves.github.io/Getting-Started">Getting Started with
-HTM-Elves</a></li>
+<li>Review basic formatting techniques in Markdown</li>
+<li>Use Markdown snippets to display code listings with syntax
+highlighting</li>
+<li>Discover advanced syntax-highlighting and line-numbering tricks</li>
+<li>See how to insert images with customized captions</li>
 <li>Update the index for your tutorials.</li>
 </ol>
+<h2 id="a-mini-tutorial">A mini tutorial</h2>
+<p>Over the following pages, I will be writing a mini tutorial which
+illustrates the main techniques that you can use with HTM-Elves. You can
+find the completed mini tutorial <a
+href="https://htm-elves.github.io/Using-CSS-Counters/">here</a>.</p>
 <details class="tip" open>
 <summary>
-All your own work?
+Setting sights on the goal
 </summary>
-<p>You probably already have a clear idea about the first tutorial you
-want to write, but I don’t know what your idea is. For simplicity, I
-will follow my own idea, so the examples I give will be generic. Please
-feel free to use your own content rather than the text, code and images
-that I provide.</p>
+<p>I suggest that you <strong><a
+href="https://htm-elves.github.io/Using-CSS-Counters/"
+target="htm-elves">open the completed mini tutorial in a separate
+window</a></strong>, alongside this tutorial, so that you can see what
+your own work should look like as you follow each step.</p>
+<p>If the link above opens in a new tab in the same browser window,
+select the new tab and drag it downwards, to create a new browser
+window, then rearrange your browser windows side-by-side.</p>
 </details>
 <details class="pivot" open>
 <summary>
 An Organization by any other name…
 </summary>
-<p>I’ll imagine that you created a GitHub Organization called
-<code>MyTutorials</code>, and that you have created a folder called
-<code>MyTutorials</code>, into which you have cloned a fork of
-HTM-Elves, named <code>MyTutorials.github.io</code>. In the text that
-follows, please use your own folder name and repository name
-instead.</p>
+<p>In the text that follows, I’ve imagined that you:</p>
+<ul>
+<li>Created a GitHub organization called <code>MyTutorials</code></li>
+<li>Cloned a fork of <a
+href="https://github.com/HTM-Elves/HTM-Elves.github.io">HTM-Elves.github.io</a>
+into your GitHub organization</li>
+<li>Named your fork to match the name of your organization (e.g.:
+<code>MyTutorials.github.io</code>)</li>
+<li>Created a folder on your development computer with the same name as
+your GitHub organization (e.g.: <code>MyTutorials</code>)</li>
+<li>Cloned you fork of HTM-Elves, named
+<code>MyTutorials.github.io</code>, into your <code>MyTutorials</code>
+folder.</li>
+</ul>
+<p>In fact, you will have chosen a different name for your GitHub
+organization, so please use your own name everywhere that you see
+<code>MyTutorials</code>.</p>
 </details>
 </section>
 
