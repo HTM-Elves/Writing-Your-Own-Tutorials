@@ -20,7 +20,7 @@ If you need to insert a section between two existing sections, you don't need to
 
 <details class="feedback" open>
 <summary>Other issues</summary>
-If you find any other issues with HTM-Elves, [create an issue](https://github.com/HTM-Elves.github.io/issues/new) for me on GitHub, and I will get back to you as soon as I can.
+If you find any other issues with HTM-Elves, [create an issue](https://github.com/HTM-Elves/HTM-Elves.github.io/issues/new) for me on GitHub, and I will get back to you as soon as I can.
 
 </details>
 
