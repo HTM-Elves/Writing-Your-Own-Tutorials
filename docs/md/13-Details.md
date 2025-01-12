@@ -26,9 +26,21 @@ This is a request for feedback.
 
 </details>
 
+<details class="sandbox" open>
+<summary>Sandbox</summary>
+This is a sandbox: a place to experiment and make mistakes
+
+</details>
+
 <details class="tip" open>
 <summary>Tip</summary>
 This is a tip.
+
+</details>
+
+<details class="trouble" >
+<summary>Troubleshooting</summary>
+Help with troubleshooting. Usually closed
 
 </details>
 
@@ -41,7 +53,7 @@ This is a warning.
 
 <details class="alert" open>
 <summary>Alert</summary>
-This is a alert.
+This is an alert.
 
 </details>
 
@@ -74,27 +86,40 @@ This concludes a section and introduces the next topic.
 
 </details>
 
+<details class="env" open>
+<summary>Environment</summary>
+Information about code editing and other useful programs
+
+</details>
+
+<details class="story">
+<summary>Story</summary>
+A personal anecdote or business case study. Usually closed.
+
+</details>
+
 ## Styling
 The colours for the `<details>` elements are defined in the `:root` section of `MyTutorials.github.io/public/styles/`.
 
-```css-#33
-  /* Details */
-  --alert:     #600;
+```css-#34
+/* Details */
+  --alert:     #800;
   --challenge: #609;
   --env:       #069;
-  --feedback:  #064;
   --note:      #040;
   --pivot:     #03c;
   --question:  #907;
   --solution:  #4069;
+  --story:     #088;
   --tip:       #960;
   --tldr:      #004;
+  --trouble:   #c60;
   --warn:      #630;
 ```
 
 The `background-color`s are generated using the newly available `color-mix` functional notation:
 
-```css-#664
+```css-#702
   background-color: color-mix(
     in oklab,
     var(--bg-color),

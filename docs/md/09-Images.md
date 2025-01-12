@@ -57,8 +57,9 @@ If you press Tab again, the word `Caption` will be selected, and you can type th
 
 `MyTutorials.github.io/public/styles.css` contains a rule for automatically numbering the `figcaption` elements in your `index.html` file. Look for the following rule if you want to name or style your images differently.
 
-```css-#210
+```css-#233
 <i>figure {
+  position: relative; /* so credits show correctly */
   margin: 0;
 
   figcaption {
@@ -74,6 +75,24 @@ If you press Tab again, the word `Caption` will be selected, and you can type th
   }
 }</i>
 ```
+
+<details class="tip">
+<summary>Crediting images with a Creative Commons licence</summary>
+If you use a third-party image which requires attribution, you can provide the required information in an attribute block immediately after the link.
+
+```md-w
+![<u>Caption</u>](images/ChosenImage.jpg){data-title="Original title" data-credit="Image by [credit text](https://example.com/credit/link)"}
+```
+
+If no `data-title` is given, the value for `alt` will be used instead. An `alt` attribute must be given in the square brackets, shown as `[Caption]`.
+
+For example, the following markdown will embed the image shown below. When you rollover the image, an interactive credits overlay will appear.
+
+```md-w
+![Creative CC Commons image](https://live.staticflickr.com/5448/9645435189_32282abc3b_w.jpg){data-credits="[CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.0/) by [Dennis Skley](https://www.flickr.com/photos/dskley/) | [original](https://www.flickr.com/photos/dskley/9645435189) | [Facebook](https://www.facebook.com/Skley.Photography)"}
+```
+![Creative CC Commons image](https://live.staticflickr.com/5448/9645435189_32282abc3b_w.jpg){data-credits="[CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.0/) by [Dennis Skley](https://www.flickr.com/photos/dskley/) | [original](https://www.flickr.com/photos/dskley/9645435189) | [Facebook](https://www.facebook.com/Skley.Photography)"}
+</details>
 
 
 <details class="tldr">

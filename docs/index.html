@@ -970,7 +970,8 @@ your image.</p>
 for automatically numbering the <code>figcaption</code> elements in your
 <code>index.html</code> file. Look for the following rule if you want to
 name or style your images differently.</p>
-<pre class="language-css line-numbers" data-start="210"><code class="language-css line-numbers"><i>figure {
+<pre class="language-css line-numbers" data-start="233"><code class="language-css line-numbers"><i>figure {
+  position: relative; /* so credits show correctly */
   margin: 0;
 
   figcaption {
@@ -985,6 +986,30 @@ name or style your images differently.</p>
     }</b><i>
   }
 }</i></code></pre>
+<details class="tip">
+<summary>
+Crediting images with a Creative Commons licence
+</summary>
+<p>If you use a third-party image which requires attribution, you can
+provide the required information in an attribute block immediately after
+the link.</p>
+<pre class="language-md wrap"><code class="language-md wrap">![<u>Caption</u>](images/ChosenImage.jpg){data-title="Original title" data-credit="Image by [credit text](https://example.com/credit/link)"}</code></pre>
+<p>If no <code>data-title</code> is given, the value for
+<code>alt</code> will be used instead. An <code>alt</code> attribute
+must be given in the square brackets, shown as
+<code>[Caption]</code>.</p>
+<p>For example, the following markdown will embed the image shown below.
+When you rollover the image, an interactive credits overlay will
+appear.</p>
+<pre class="language-md wrap"><code class="language-md wrap">![Creative CC Commons image](https://live.staticflickr.com/5448/9645435189_32282abc3b_w.jpg){data-credits="[CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.0/) by [Dennis Skley](https://www.flickr.com/photos/dskley/) | [original](https://www.flickr.com/photos/dskley/9645435189) | [Facebook](https://www.facebook.com/Skley.Photography)"}</code></pre>
+<figure>
+<img
+src="https://live.staticflickr.com/5448/9645435189_32282abc3b_w.jpg"
+data-credits="[CC BY-ND 2.0](https://creativecommons.org/licenses/by-nd/2.0/) by [Dennis Skley](https://www.flickr.com/photos/dskley/) | [original](https://www.flickr.com/photos/dskley/9645435189) | [Facebook](https://www.facebook.com/Skley.Photography)"
+alt="Creative CC Commons image" />
+<figcaption aria-hidden="true">Creative CC Commons image</figcaption>
+</figure>
+</details>
 <details class="tldr">
 <summary>
 VS Code Markdown Preview
@@ -1261,11 +1286,23 @@ Feedback
 </summary>
 <p>This is a request for feedback.</p>
 </details>
+<details class="sandbox" open>
+<summary>
+Sandbox
+</summary>
+<p>This is a sandbox: a place to experiment and make mistakes</p>
+</details>
 <details class="tip" open>
 <summary>
 Tip
 </summary>
 <p>This is a tip.</p>
+</details>
+<details class="trouble">
+<summary>
+Troubleshooting
+</summary>
+<p>Help with troubleshooting. Usually closed</p>
 </details>
 </details>
 <details class="warn" open>
@@ -1278,7 +1315,7 @@ Warn
 <summary>
 Alert
 </summary>
-<p>This is a alert.</p>
+<p>This is an alert.</p>
 </details>
 <details class="question" open>
 <summary>
@@ -1311,25 +1348,38 @@ Pivot
 </summary>
 <p>This concludes a section and introduces the next topic.</p>
 </details>
+<details class="env" open>
+<summary>
+Environment
+</summary>
+<p>Information about code editing and other useful programs</p>
+</details>
+<details class="story">
+<summary>
+Story
+</summary>
+<p>A personal anecdote or business case study. Usually closed.</p>
+</details>
 <h2 id="styling">Styling</h2>
 <p>The colours for the <code>&lt;details&gt;</code> elements are defined
 in the <code>:root</code> section of
 <code>MyTutorials.github.io/public/styles/</code>.</p>
-<pre class="language-css line-numbers" data-start="33"><code class="language-css line-numbers">  /* Details */
-  --alert:     #600;
+<pre class="language-css line-numbers" data-start="34"><code class="language-css line-numbers">/* Details */
+  --alert:     #800;
   --challenge: #609;
   --env:       #069;
-  --feedback:  #064;
   --note:      #040;
   --pivot:     #03c;
   --question:  #907;
   --solution:  #4069;
+  --story:     #088;
   --tip:       #960;
   --tldr:      #004;
+  --trouble:   #c60;
   --warn:      #630;</code></pre>
 <p>The <code>background-color</code>s are generated using the newly
 available <code>color-mix</code> functional notation:</p>
-<pre class="language-css line-numbers" data-start="664"><code class="language-css line-numbers">  background-color: color-mix(
+<pre class="language-css line-numbers" data-start="702"><code class="language-css line-numbers">  background-color: color-mix(
     in oklab,
     var(--bg-color),
     var(--darker)
