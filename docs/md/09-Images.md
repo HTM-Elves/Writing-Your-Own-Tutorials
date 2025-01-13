@@ -71,7 +71,7 @@ If you press Tab again, the word `Caption` will be selected, and you can type th
     </i><b>&::before {>
       counter-increment: fig;
       content: "Figure " counter(fig) ": ";
-    }</b><i>
+    }</b><i>`
   }
 }</i>
 ```

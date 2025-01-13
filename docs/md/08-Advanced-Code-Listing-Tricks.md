@@ -233,7 +233,7 @@ There are also snippets for creating the (quirky) `<b>`, `<i>`, `<s>` and `<u>` 
 * `<b` : to wrap a selection in a `<b>` element (bright)
 * `<i` : to wrap a selection in a `<i>` element (dim)
 * `<s` : to wrap a selection in a `<s>` element (strike-through)
-* `<u` : to wrap a selection in a `<u>` element (TM_SELECTED_TEXT)
+* `<u` : to wrap a selection in a `<u>` element (selected text)
 * `ib` : to wrap a selection in a `</i><b>...</b><i>`, to insert a bright element inside a dimmed block of code
 
 
@@ -280,11 +280,29 @@ This part is also familiar code.&lt;i&gt;</i>
 This part is also familiar code.&lt;i&gt;</i>
 ```
 
-<details class="warn">
-<summary>Warning: HTML code blocks don't like these quirky tags</summary>
-At the time of writing, if you try this with an HTML code block, the Markdown snippets described above will fail. Instead, VS Code will think that you actually want to replace the selected text with the Markdown snippet prefix.
+<details class="warn" open>
+<summary>Warning: Standard code blocks don't like these quirky tags</summary>
+If you try this with a basic code block, the Markdown snippets described above will fail. For example, this is a basic code block, with a simple language name:
 
-You might have to use the Undo feature in a hurry, and type in the tags by hand.
+````md
+```javascript
+// Using Markdown snippet prefixes like `<i` and `<b` will
+// fail here. Add a dash (`-`) after the language name to
+// allow these snippet prefixes to work.
+```
+````
+
+To enable these formatting snippets to work, add a dash (`-`) after the language name (or use a numbering/wrapping variant like `css-#13` or `html-w`).
+
+````md
+```javascript-
+// <b>You can use</b><i> Markdown snippet </i></i><b>prefixes like`<i` and `<b`</b><i>
+// inside a code block </i><b>where the language name includes a</b><i>
+// </i><b>dash</b><i> (`-`).</i>
+```
+````
+
+You can remove the temporary trailing dash that you added after you have dealt with the highlighting.
 
 </details>
 

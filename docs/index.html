@@ -857,7 +857,7 @@ element (dim)</li>
 <li><code>&lt;s</code> : to wrap a selection in a <code>&lt;s&gt;</code>
 element (strike-through)</li>
 <li><code>&lt;u</code> : to wrap a selection in a <code>&lt;u&gt;</code>
-element (TM_SELECTED_TEXT)</li>
+element (selected text)</li>
 <li><code>ib</code> : to wrap a selection in a
 <code>&lt;/i&gt;&lt;b&gt;...&lt;/b&gt;&lt;i&gt;</code>, to insert a
 bright element inside a dimmed block of code</li>
@@ -895,16 +895,28 @@ block in the middle of the dim block</li>
 <pre class="language-md"><code class="language-md"><i>&lt;i&gt;This is code that the reader has already seen.
 &lt;/i&gt;&lt;b&gt;</i><b>This part is new.</b><i>&lt;/b&gt;&lt;i&gt;
 This part is also familiar code.&lt;i&gt;</i></code></pre>
-<details class="warn">
+<details class="warn" open>
 <summary>
-Warning: HTML code blocks don’t like these quirky tags
+Warning: Standard code blocks don’t like these quirky tags
 </summary>
-<p>At the time of writing, if you try this with an HTML code block, the
-Markdown snippets described above will fail. Instead, VS Code will think
-that you actually want to replace the selected text with the Markdown
-snippet prefix.</p>
-<p>You might have to use the Undo feature in a hurry, and type in the
-tags by hand.</p>
+<p>If you try this with a basic code block, the Markdown snippets
+described above will fail. For example, this is a basic code block, with
+a simple language name:</p>
+<pre class="language-md line-numbers"><code class="language-md line-numbers">```javascript
+// Using Markdown snippet prefixes like `&lt;i` and `&lt;b` will
+// fail here. Add a dash (`-`) after the language name to
+// allow these snippet prefixes to work.
+```</code></pre>
+<p>To enable these formatting snippets to work, add a dash
+(<code>-</code>) after the language name (or use a numbering/wrapping
+variant like <code>css-#13</code> or <code>html-w</code>).</p>
+<pre class="language-md line-numbers"><code class="language-md line-numbers">```javascript-
+// <b>You can use</b><i> Markdown snippet </i></i><b>prefixes like`&lt;i` and `&lt;b`</b><i>
+// inside a code block </i><b>where the language name includes a</b><i>
+// </i><b>dash</b><i> (`-`).</i>
+```</code></pre>
+<p>You can remove the temporary trailing dash that you added after you
+have dealt with the highlighting.</p>
 </details>
 </details>
 </section>
@@ -983,7 +995,7 @@ name or style your images differently.</p>
     </i><b>&::before {&gt;
       counter-increment: fig;
       content: "Figure " counter(fig) ": ";
-    }</b><i>
+    }</b><i>`
   }
 }</i></code></pre>
 <details class="tip">
