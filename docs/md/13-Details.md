@@ -67,6 +67,12 @@ This is a question, to make you think ahead.
 <summary>Challenge</summary>
 This is a challenge. You will be asked to find your own way to deal with a task before you reveal the solution.
 
+<details class="hint">
+<summary>Hint</summary>
+You'll find some clues about how to solve the challenge here.
+
+</details>
+
 <details class="solution">
 <summary>Solution</summary>
 You'll find the solution here.
