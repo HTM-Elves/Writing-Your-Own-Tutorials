@@ -28,7 +28,7 @@ This is a request for feedback.
 
 <details class="sandbox" open>
 <summary>Sandbox</summary>
-This is a sandbox: a place to experiment and make mistakes
+This is a sandbox: a place to experiment and make mistakes.
 
 </details>
 
@@ -82,7 +82,7 @@ You'll find the solution here.
 
 <details class="tldr">
 <summary>TL;DR</summary>
-This is a deep dive into a topic. It's usually not open.
+This is a deep dive into a topic. It's usually closed.
 
 </details>
 
@@ -94,7 +94,7 @@ This concludes a section and introduces the next topic.
 
 <details class="env" open>
 <summary>Environment</summary>
-Information about code editing and other useful programs
+Information about code editing and other useful programs.
 
 </details>
 
@@ -107,7 +107,7 @@ A personal anecdote or business case study. Usually closed.
 ## Styling
 The colours for the `<details>` elements are defined in the `:root` section of `MyTutorials.github.io/public/styles/`.
 
-```css-#34
+```css-#35
 /* Details */
   --alert:     #800;
   --challenge: #609;
@@ -115,9 +115,10 @@ The colours for the `<details>` elements are defined in the `:root` section of `
   --note:      #040;
   --pivot:     #03c;
   --question:  #907;
+  --sandbox:   #a86;
   --solution:  #4069;
   --story:     #088;
-  --tip:       #960;
+  --tip:       #c90;
   --tldr:      #004;
   --trouble:   #c60;
   --warn:      #630;
