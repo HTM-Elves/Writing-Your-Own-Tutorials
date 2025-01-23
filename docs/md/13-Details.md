@@ -105,28 +105,48 @@ A personal anecdote or business case study. Usually closed.
 </details>
 
 ## Styling
-The colours for the `<details>` elements are defined in the `:root` section of `MyTutorials.github.io/public/styles/`.
+The "light" colors for the `<details>` elements are defined in the `:root` section of `MyTutorials.github.io/public/styles/`:
 
-```css-#35
+```css-#49
 /* Details */
-  --alert:     #800;
-  --challenge: #609;
-  --env:       #069;
-  --note:      #040;
-  --pivot:     #03c;
-  --question:  #907;
-  --sandbox:   #a86;
-  --solution:  #4069;
-  --story:     #088;
-  --tip:       #c90;
-  --tldr:      #004;
-  --trouble:   #c60;
-  --warn:      #630;
+  --alert:     #f99;
+  --challenge: #ecf;
+  --env:       #aef;
+  --feedback:  #beb;
+  --note:      #dfd;
+  --pivot:     #9cf;
+  --question:  #fbd;
+  --sandbox:   #fec;
+  --solution:  #d9f6;
+  --story:     #cfe;
+  --tip:       #fe9;
+  --tldr:      #77b;
+  --trouble:   #fc9;
+  --warn:      #fbb;
+  --code:      #0001;
 ```
+
+Colors for "dark" mode are defined a little lower down:
+
+```css-#99
+body:has(#theme-dark:checked) {
+```
+```css-s
+/* lines skipped */
+```
+```css-#111
+  /* Details */
+  --alert:     #800;
+```
+```css-s
+/* and so on... */
+```
+
+
 
 The `background-color`s are generated using the newly available `color-mix` functional notation:
 
-```css-#702
+```css-#867
   background-color: color-mix(
     in oklab,
     var(--bg-color),

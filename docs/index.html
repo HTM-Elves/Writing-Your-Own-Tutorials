@@ -17,13 +17,27 @@ content="width=device-width, initial-scale=1.0"
 </head>
 
 <body>
-<main id="main">
+<main id="content">
 <header>
 <a href="https://HTM-Elves.github.io"><img src="../public/svg/home.svg" alt="home"></a>
 <h1>Writing Your Own Tutorials</h1>
 <h3>to learn better and build your online reputation</h3>
 <h4>December 2024</h4>
 </header>
+<nav
+  id="content-header"
+  aria-labelledby="content-header"
+>
+  <button type="button" class="previous" disabled>
+    <img src="../public/svg/prev.svg" alt="previous" draggable="false">
+  </button>
+  <span class="previous-name"></span>
+  <span class="spacer"></span>
+  <button type="button" class="next">
+    <img src="../public/svg/next.svg" alt="next" draggable="false">
+  </button>
+  <span class="next-name"></span>
+</nav>
 
 <section id="new-tutorial" aria-labelledby="new-tutorial" data-item="Create A New Tutorial">
 <h2>
@@ -1379,26 +1393,34 @@ Story
 <p>A personal anecdote or business case study. Usually closed.</p>
 </details>
 <h2 id="styling">Styling</h2>
-<p>The colours for the <code>&lt;details&gt;</code> elements are defined
-in the <code>:root</code> section of
-<code>MyTutorials.github.io/public/styles/</code>.</p>
-<pre class="language-css line-numbers" data-start="35"><code class="language-css line-numbers">/* Details */
-  --alert:     #800;
-  --challenge: #609;
-  --env:       #069;
-  --note:      #040;
-  --pivot:     #03c;
-  --question:  #907;
-  --sandbox:   #a86;
-  --solution:  #4069;
-  --story:     #088;
-  --tip:       #c90;
-  --tldr:      #004;
-  --trouble:   #c60;
-  --warn:      #630;</code></pre>
+<p>The “light” colors for the <code>&lt;details&gt;</code> elements are
+defined in the <code>:root</code> section of
+<code>MyTutorials.github.io/public/styles/</code>:</p>
+<pre class="language-css line-numbers" data-start="49"><code class="language-css line-numbers">/* Details */
+  --alert:     #f99;
+  --challenge: #ecf;
+  --env:       #aef;
+  --feedback:  #beb;
+  --note:      #dfd;
+  --pivot:     #9cf;
+  --question:  #fbd;
+  --sandbox:   #fec;
+  --solution:  #d9f6;
+  --story:     #cfe;
+  --tip:       #fe9;
+  --tldr:      #77b;
+  --trouble:   #fc9;
+  --warn:      #fbb;
+  --code:      #0001;</code></pre>
+<p>Colors for “dark” mode are defined a little lower down:</p>
+<pre class="language-css line-numbers" data-start="99"><code class="language-css line-numbers">body:has(#theme-dark:checked) {</code></pre>
+<pre class="skip"><code class="skip">/* lines skipped */</code></pre>
+<pre class="language-css line-numbers" data-start="111"><code class="language-css line-numbers">  /* Details */
+  --alert:     #800;</code></pre>
+<pre class="skip"><code class="skip">/* and so on... */</code></pre>
 <p>The <code>background-color</code>s are generated using the newly
 available <code>color-mix</code> functional notation:</p>
-<pre class="language-css line-numbers" data-start="702"><code class="language-css line-numbers">  background-color: color-mix(
+<pre class="language-css line-numbers" data-start="867"><code class="language-css line-numbers">  background-color: color-mix(
     in oklab,
     var(--bg-color),
     var(--darker)
@@ -2100,77 +2122,71 @@ organization, so please use your own name everywhere that you see
 </section>
 
 <div class="spacer"></div>
-<footer id="footer">
-<button type="button" id="previous" disabled>&lt;</button>
-<span id="previous-name"></span>
+<footer id="content-footer">
+<button type="button" class="previous" disabled>
+  <img src="../public/svg/prev.svg" alt="prev" draggable="false">
+</button>
+<span class="previous-name"></span>
 <span class="spacer"></span>
-<button type="button" id="next">&gt;</button>
-<span id="next-name"></span>
+<button type="button" class="next">
+  <img src="../public/svg/next.svg" alt="next" draggable="false">
+</button>
+<span class="next-name"></span>
 </footer>
 </main>
 
 <nav
 id="menu"
+aria-labelledby="menu"
 class="open"
 >
-<div class="paging">
-<label
-title="Split into sections"
->
-<img src="../public/svg/pages.svg" alt="pages">
-<input
-type="radio"
-name="paging"
-id="pages"
-checked
->
-</label>
-<label
-title="Show as a single page"
->
-<img src="../public/svg/scroll.svg" alt="scroll">
-<input
-type="radio"
-name="paging"
-id="scroll"
->
-</label>
-</div>
-<svg
-id="menu-icon"
-viewBox="0 0 100 100"
-preserveAspectRatio="xMidYMid meet"
->
-<g
-class="menu"
-stroke-width="20"
-stroke-linecap="round"
->
-<path
-d="M5,20 L5,80 H95 L95,20 z"
-fill="#0000"
-stroke="none"
-/>
-<line
-x1="15"
-y1="20"
-x2="85"
-y2="20"
-/>
-<line
-x1="15"
-y1="50"
-x2="85"
-y2="50"
-/>
-<line
-x1="15"
-y1="80"
-x2="85"
-y2="80"
-/>
-</g>
-</svg>
+<div class="theme">
+  <label
+  title="Dark"
+  >
+  <img src="../public/svg/dark.svg" alt="dark">
+  <input
+  type="radio"
+  name="theme"
+  id="theme-dark"
+  checked
+  >
+  </label>
+  <label
+  title="Light"
+  >
+  <img src="../public/svg/light.svg" alt="light">
+  <input
+  type="radio"
+  name="theme"
+  id="theme-light"
+  >
+  </label>
+  </div>
+  <div class="paging">
+  <label
+  title="Split into sections"
+  >
+  <img src="../public/svg/pages.svg" alt="pages">
+  <input
+  type="radio"
+  name="paging"
+  id="pages"
+  checked
+  >
+  </label>
+  <label
+  title="Show as a single page"
+  >
+  <img src="../public/svg/scroll.svg" alt="scroll">
+  <input
+  type="radio"
+  name="paging"
+  id="scroll"
+  >
+  </label>
+  </div>
+<img src="../public/svg/hamburger.svg" alt="menu" id="menu-icon">
 
 <ul id="menu-items">
 </ul>
