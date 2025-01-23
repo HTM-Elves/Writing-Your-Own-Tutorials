@@ -1396,7 +1396,7 @@ Story
 <p>The “light” colors for the <code>&lt;details&gt;</code> elements are
 defined in the <code>:root</code> section of
 <code>MyTutorials.github.io/public/styles/</code>:</p>
-<pre class="language-css line-numbers" data-start="49"><code class="language-css line-numbers">/* Details */
+<pre class="language-css line-numbers" data-start="51"><code class="language-css line-numbers">/* Details */
   --alert:     #f99;
   --challenge: #ecf;
   --env:       #aef;
@@ -1413,11 +1413,12 @@ defined in the <code>:root</code> section of
   --warn:      #fbb;
   --code:      #0001;</code></pre>
 <p>Colors for “dark” mode are defined a little lower down:</p>
-<pre class="language-css line-numbers" data-start="99"><code class="language-css line-numbers">body:has(#theme-dark:checked) {</code></pre>
+<pre class="language-css line-numbers" data-start="100"><code class="language-css line-numbers">body:has(#theme-dark:checked) {</code></pre>
 <pre class="skip"><code class="skip">/* lines skipped */</code></pre>
 <pre class="language-css line-numbers" data-start="111"><code class="language-css line-numbers">  /* Details */
   --alert:     #800;</code></pre>
 <pre class="skip"><code class="skip">/* and so on... */</code></pre>
+<pre class="language-css line-numbers" data-start="133"><code class="language-css line-numbers">}</code></pre>
 <p>The <code>background-color</code>s are generated using the newly
 available <code>color-mix</code> functional notation:</p>
 <pre class="language-css line-numbers" data-start="867"><code class="language-css line-numbers">  background-color: color-mix(
@@ -2190,7 +2191,6 @@ class="open"
 
 <ul id="menu-items">
 </ul>
-
 <div id="repo">
 <a
 href="https://github.com/HTM-Elves/Writing-Your-Own-Tutorials/issues/new"

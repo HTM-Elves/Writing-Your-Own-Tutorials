@@ -107,7 +107,7 @@ A personal anecdote or business case study. Usually closed.
 ## Styling
 The "light" colors for the `<details>` elements are defined in the `:root` section of `MyTutorials.github.io/public/styles/`:
 
-```css-#49
+```css-#51
 /* Details */
   --alert:     #f99;
   --challenge: #ecf;
@@ -128,7 +128,7 @@ The "light" colors for the `<details>` elements are defined in the `:root` secti
 
 Colors for "dark" mode are defined a little lower down:
 
-```css-#99
+```css-#100
 body:has(#theme-dark:checked) {
 ```
 ```css-s
@@ -141,6 +141,10 @@ body:has(#theme-dark:checked) {
 ```css-s
 /* and so on... */
 ```
+```css-#133
+}
+```
+
 
 
 
